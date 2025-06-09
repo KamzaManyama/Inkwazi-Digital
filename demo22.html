@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inkwazi Digital | Architectural Digital Marketing</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://inkwazidigital.co.za/wp-content/uploads/2023/07/cropped-favicon-32x32.png">
+    <style>
+        :root {
+            --primary-dark: #2D3748;       /* Dark slate - like concrete */
+            --primary-medium: #4A5568;     /* Medium slate - steel tones */
+            --primary-light: #718096;      /* Light slate - glass reflections */
+            --neutral-white: #FFFFFF;      /* Pure white - like marble */
+            --neutral-light: #F8F9FA;      /* Very light gray - paper textures */
+            --neutral-medium: #E2E8F0;     /* Medium gray - brushed metal */
+            --accent-color: #5F6C80;       /* Muted accent - oxidized metal */
+            --highlight-color: #4C566A;    /* Darker for contrast - shadow lines */
+        }
+    
+        body {
+            font-family: 'Archivo', sans-serif;
+            background-color: var(--neutral-light);
+            color: var(--primary-medium);
+            line-height: 1.6;
+        }
+        
+        .font-heading {
+            font-family: 'DM Serif Display', serif;
+            letter-spacing: -0.5px;
+        }
+        
+        /* Architectural Elements */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-medium), transparent);
+        }
+        
+        .grid-line {
+            position: absolute;
+            background-color: rgba(45, 55, 72, 0.05);
+            z-index: -1;
+        }
+        
+        .vertical-line {
+            width: 1px;
+            height: 100%;
+        }
+        
+        .horizontal-line {
+            height: 1px;
+            width: 100%;
+        }
+        
+        /* Color Classes */
+        .bg-primary-dark { background-color: var(--primary-dark); }
+        .bg-primary-medium { background-color: var(--primary-medium); }
+        .bg-primary-light { background-color: var(--primary-light); }
+        .bg-neutral-light { background-color: var(--neutral-light); }
+        .bg-neutral-medium { background-color: var(--neutral-medium); }
+        
+        .text-primary-dark { color: var(--primary-dark); }
+        .text-primary-medium { color: var(--primary-medium); }
+        .text-primary-light { color: var(--primary-light); }
+        .text-accent { color: var(--accent-color); }
+        
+        /* Architectural Buttons */
+        .btn-primary {
+            background-color: var(--primary-dark);
+            color: white;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: white;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--highlight-color);
+        }
+        
+        .btn-primary:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .btn-secondary {
+            border: 1px solid var(--primary-dark);
+            color: var(--primary-dark);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            background: transparent;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+    
+        /* Navigation - Minimalist like blueprints */
+        .nav-link {
+            position: relative;
+            color: var(--primary-dark);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+    
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary-dark);
+            transition: width 0.3s ease;
+        }
+    
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    
+        .active-nav::after {
+            width: 100%;
+        }
+        
+        /* Hero section - like a building facade */
+        .hero {
+            background: 
+            linear-gradient(rgba(45, 55, 72, 0.92), rgba(45, 55, 72, 0.92)),
+            url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center center/cover no-repeat;
+            height: 90vh;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--neutral-light));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Service cards - like building blocks */
+        .service-card {
+            background: white;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            position: relative;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--neutral-medium);
+            pointer-events: none;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-left-color: var(--primary-dark);
+        }
+        
+        /* Stats section - like a building grid */
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            font-family: 'DM Serif Display', serif;
+        }
+    
+        /* Process steps - like floor plans */
+        .process-step {
+            position: relative;
+            background: white;
+            border-radius: 0;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--neutral-medium);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .process-step:hover {
+            border-color: var(--primary-dark);
+        }
+    
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 0;
+            background: var(--primary-dark);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+            font-family: 'DM Serif Display', serif;
+        }
+        
+        /* Testimonial cards - like framed blueprints */
+        .testimonial-card {
+            background: white;
+            border-radius: 0;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: relative;
+            border: 1px solid var(--neutral-medium);
+        }
+        
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 1px solid var(--neutral-medium);
+            pointer-events: none;
+        }
+        
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 0;
+            object-fit: cover;
+            border: 1px solid var(--neutral-medium);
+        }
+        
+        /* Contact section - like a contact form on drafting table */
+        .contact-icon {
+            background-color: transparent;
+            color: var(--primary-dark);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--neutral-medium);
+        }
+    
+        .form-focus:focus {
+            border-color: var(--primary-dark);
+            box-shadow: none;
+            outline: 1px solid var(--primary-dark);
+        }
+    
+        /* Footer - like a building foundation */
+        .footer {
+            background-color: var(--primary-dark);
+            color: white;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
+        }
+    
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--neutral-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: white;
+            color: var(--primary-dark) !important;
+            border-color: white;
+        }
+        
+        /* Architectural animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+        
+        /* Grid lines for architectural feel */
+        .grid-container {
+            position: relative;
+        }
+        
+        .grid-line-1 {
+            left: 25%;
+        }
+        
+        .grid-line-2 {
+            left: 50%;
+        }
+        
+        .grid-line-3 {
+            left: 75%;
+        }
+        
+        /* Section numbering like architectural plans */
+        .section-number {
+            position: absolute;
+            font-family: 'DM Serif Display', serif;
+            font-size: 12rem;
+            color: rgba(45, 55, 72, 0.03);
+            z-index: -1;
+            line-height: 1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-neutral-light">
+    <!-- Grid Lines for Architectural Feel -->
+    <div class="fixed inset-0 w-full h-full pointer-events-none hidden lg:block">
+        <div class="container mx-auto h-full relative">
+            <div class="grid-line vertical-line grid-line-1"></div>
+            <div class="grid-line vertical-line grid-line-2"></div>
+            <div class="grid-line vertical-line grid-line-3"></div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <nav class="fixed top-0 w-full p-4 z-50 transition-all duration-300 bg-white" id="main-nav">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between border-b border-neutral-medium">
+            <a href="index.html" class="flex items-center flex-shrink-0">
+                <img src="https://inkwazidigital.co.za/wp-content/uploads/2023/07/Inkwazi-Digital-Logo-1.png" alt="Inkwazi Digital Logo" class="h-10 w-auto">
+            </a>
+
+            <!-- Optimized Navigation - 5 links -->
+            <div class="hidden md:flex flex-grow justify-center space-x-8 items-center">
+                <a href="#hero" class="text-primary-dark hover:text-primary-medium transition duration-300 nav-link active-nav">Home</a>
+                <a href="#services" class="text-primary-dark hover:text-primary-medium transition duration-300 nav-link">Services</a>
+                <a href="#process" class="text-primary-dark hover:text-primary-medium transition duration-300 nav-link">Process</a>
+                <a href="#testimonials" class="text-primary-dark hover:text-primary-medium transition duration-300 nav-link">Clients</a>
+                <a href="#contact" class="text-primary-dark hover:text-primary-medium transition duration-300 nav-link">Contact</a>
+            </div>
+
+            <div class="hidden md:flex ml-auto">
+                <a href="#contact" class="btn-primary font-semibold py-2 px-6">Get Started</a>
+            </div>
+
+            <button class="md:hidden hamburger-menu focus:outline-none" id="hamburger" onclick="toggleMobileMenu()">
+                <div class="bar bg-primary-dark w-6 h-0.5 mb-1.5 transition-colors duration-300"></div>
+                <div class="bar bg-primary-dark w-6 h-0.5 mb-1.5 transition-colors duration-300"></div>
+                <div class="bar bg-primary-dark w-6 h-0.5 transition-colors duration-300"></div>
+            </button>
+        </div>
+
+        <!-- Mobile Menu with same 5 links -->
+        <div class="md:hidden absolute top-full left-0 right-0 bg-white shadow-md overflow-hidden hidden" id="mobile-menu">
+            <a href="#hero" class="block px-4 py-3 text-primary-dark hover:bg-neutral-light hover:text-primary-medium transition duration-300 border-b border-neutral-medium">Home</a>
+            <a href="#services" class="block px-4 py-3 text-primary-dark hover:bg-neutral-light hover:text-primary-medium transition duration-300 border-b border-neutral-medium">Services</a>
+            <a href="#process" class="block px-4 py-3 text-primary-dark hover:bg-neutral-light hover:text-primary-medium transition duration-300 border-b border-neutral-medium">Process</a>
+            <a href="#testimonials" class="block px-4 py-3 text-primary-dark hover:bg-neutral-light hover:text-primary-medium transition duration-300 border-b border-neutral-medium">Clients</a>
+            <a href="#contact" class="block px-4 py-3 text-primary-dark hover:bg-neutral-light hover:text-primary-medium transition duration-300 border-b border-neutral-medium">Contact</a>
+            <a href="#contact" class="block px-4 py-3 btn-primary font-semibold text-center">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero relative flex items-center pt-16">
+        <div class="container mx-auto px-4 hero-content">
+            <div class="max-w-3xl">
+                <span class="inline-block text-neutral-light uppercase tracking-widest mb-4 font-semibold text-xs letter-spacing: 2px;">ARCHITECTING DIGITAL SUCCESS</span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading leading-tight">
+                    Building Foundations for Digital Growth
+                </h1>
+                <p class="text-lg text-neutral-light mb-8 max-w-2xl">
+                    We design and construct digital marketing strategies with architectural precision—creating structures that stand the test of time and drive sustainable business growth.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#services" class="btn-primary py-3 px-8 inline-block">Our Services</a>
+                    <a href="#contact" class="btn-secondary py-3 px-8 inline-block">Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white relative">
+        <span class="section-number">01</span>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block text-primary-light uppercase tracking-widest mb-2 font-semibold text-xs">OUR EXPERTISE</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 font-heading">Digital Marketing Services</h2>
+                <div class="w-20 h-px bg-primary-medium mx-auto mb-6"></div>
+                <p class="text-primary-light max-w-3xl mx-auto leading-relaxed">
+                    Comprehensive solutions designed with architectural precision to build your online presence from the ground up.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- SEO Services -->
+                <div class="service-card reveal">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-neutral-light flex items-center justify-center mb-6">
+                            <i class="fas fa-search text-primary-dark text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4">Search Engine Optimization</h3>
+                        <p class="text-primary-light mb-6">
+                            Structural optimization of your website to improve visibility and organic traffic flow.
+                        </p>
+                        <ul class="text-sm text-primary-light space-y-3">
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Keyword research & strategy</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>On-page optimization</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Technical SEO audits</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Local SEO optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PPC Advertising -->
+                <div class="service-card reveal">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-neutral-light flex items-center justify-center mb-6">
+                            <i class="fas fa-ad text-primary-dark text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4">Pay-Per-Click Advertising</h3>
+                        <p class="text-primary-light mb-6">
+                            Precision-targeted ad campaigns engineered for maximum conversion efficiency.
+                        </p>
+                        <ul class="text-sm text-primary-light space-y-3">
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Google Ads management</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Facebook/Instagram ads</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Conversion tracking</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Remarketing campaigns</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Social Media Marketing -->
+                <div class="service-card reveal">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-neutral-light flex items-center justify-center mb-6">
+                            <i class="fas fa-hashtag text-primary-dark text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4">Social Media Marketing</h3>
+                        <p class="text-primary-light mb-6">
+                            Strategically designed social content to build your brand's community and engagement.
+                        </p>
+                        <ul class="text-sm text-primary-light space-y-3">
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Content strategy</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Community management</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Influencer partnerships</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Performance analytics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Web Design -->
+                <div class="service-card reveal">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-neutral-light flex items-center justify-center mb-6">
+                            <i class="fas fa-code text-primary-dark text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4">Web Design & Development</h3>
+                        <p class="text-primary-light mb-6">
+                            Custom digital structures designed for optimal user experience and conversion.
+                        </p>
+                        <ul class="text-sm text-primary-light space-y-3">
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Responsive design</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>E-commerce solutions</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>WordPress development</li>
+                            <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>UX/UI optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Content Marketing -->
+                <div class="service-card reveal">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-neutral-light flex items-center justify-center mb-6">
+                            <i class="fas fa-pen-fancy text-primary-dark text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4">Content Marketing</h3
+                            <p class="text-primary-light mb-6">
+                                Architecting valuable content that attracts, engages, and converts your target audience.
+                            </p>
+                            <ul class="text-sm text-primary-light space-y-3">
+                                <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Content strategy</li>
+                                <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Blog writing</li>
+                                <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Video production</li>
+                                <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Content distribution</li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <!-- Email Marketing -->
+                    <div class="service-card reveal">
+                        <div class="p-8">
+                            <div class="w-16 h-16 bg-neutral-light flex items-center justify-center mb-6">
+                                <i class="fas fa-envelope text-primary-dark text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary-dark mb-4">Email Marketing</h3>
+                            <p class="text-primary-light mb-6">
+                                Automated communication flows designed to nurture leads and retain customers.
+                            </p>
+                            <ul class="text-sm text-primary-light space-y-3">
+                                <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Email campaign design</li>
+                                <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Automation workflows</li>
+                                <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>List segmentation</li>
+                                <li class="flex items-start"><span class="inline-block w-1 h-1 bg-primary-dark mt-2 mr-3"></span>Performance analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Stats Section -->
+        <section class="py-16 bg-neutral-light">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="p-6">
+                        <div class="stats-counter mb-2" data-count="150">0</div>
+                        <p class="text-primary-light uppercase text-sm tracking-wider">Projects Completed</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="stats-counter mb-2" data-count="95">0</div>
+                        <p class="text-primary-light uppercase text-sm tracking-wider">Client Retention</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="stats-counter mb-2" data-count="12">0</div>
+                        <p class="text-primary-light uppercase text-sm tracking-wider">Years Experience</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="stats-counter mb-2" data-count="300">0</div>
+                        <p class="text-primary-light uppercase text-sm tracking-wider">Sites Optimized</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Process Section -->
+        <section id="process" class="py-24 bg-white relative">
+            <span class="section-number">02</span>
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="inline-block text-primary-light uppercase tracking-widest mb-2 font-semibold text-xs">OUR APPROACH</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 font-heading">Architectural Process</h2>
+                    <div class="w-20 h-px bg-primary-medium mx-auto mb-6"></div>
+                    <p class="text-primary-light max-w-3xl mx-auto leading-relaxed">
+                        A structured methodology that ensures every project is built on solid foundations and designed for long-term success.
+                    </p>
+                </div>
+    
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4">Discovery</h3>
+                        <p class="text-primary-light flex-grow">
+                            We analyze your business objectives, target audience, and competitive landscape to establish project parameters.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4">Planning</h3>
+                        <p class="text-primary-light flex-grow">
+                            Developing a comprehensive blueprint with clear milestones, KPIs, and strategic direction.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4">Execution</h3>
+                        <p class="text-primary-light flex-grow">
+                            Implementing the strategy with precision craftsmanship and attention to detail.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4">Optimization</h3>
+                        <p class="text-primary-light flex-grow">
+                            Continuous refinement based on performance data to maximize results over time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-24 bg-neutral-light relative">
+            <span class="section-number">03</span>
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="inline-block text-primary-light uppercase tracking-widest mb-2 font-semibold text-xs">CLIENT TESTIMONIALS</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 font-heading">What Our Clients Say</h2>
+                    <div class="w-20 h-px bg-primary-medium mx-auto mb-6"></div>
+                    <p class="text-primary-light max-w-3xl mx-auto leading-relaxed">
+                        Don't just take our word for it. Here's what our clients have to say about working with us.
+                    </p>
+                </div>
+    
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="testimonial-card">
+                        <div class="flex items-center mb-6">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="client-avatar mr-4">
+                            <div>
+                                <h4 class="font-bold text-primary-dark">Sarah Johnson</h4>
+                                <p class="text-sm text-primary-light">CEO, Design Studio</p>
+                            </div>
+                        </div>
+                        <p class="text-primary-light">
+                            "Inkwazi Digital transformed our online presence. Their strategic approach to our digital marketing delivered measurable results within months. They're now an integral part of our growth strategy."
+                        </p>
+                        <div class="mt-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+    
+                    <div class="testimonial-card">
+                        <div class="flex items-center mb-6">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="client-avatar mr-4">
+                            <div>
+                                <h4 class="font-bold text-primary-dark">Michael Chen</h4>
+                                <p class="text-sm text-primary-light">Marketing Director, Tech Corp</p>
+                            </div>
+                        </div>
+                        <p class="text-primary-light">
+                            "The team's architectural approach to our PPC campaigns was revolutionary. They didn't just run ads—they built a sustainable system that continues to deliver ROI months after implementation."
+                        </p>
+                        <div class="mt-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+    
+                    <div class="testimonial-card">
+                        <div class="flex items-center mb-6">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Amanda Rodriguez" class="client-avatar mr-4">
+                            <div>
+                                <h4 class="font-bold text-primary-dark">Amanda Rodriguez</h4>
+                                <p class="text-sm text-primary-light">Founder, Boutique Agency</p>
+                            </div>
+                        </div>
+                        <p class="text-primary-light">
+                            "Working with Inkwazi Digital feels like having an in-house marketing team. Their deep understanding of our business and strategic recommendations have been invaluable to our growth."
+                        </p>
+                        <div class="mt-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-white relative">
+            <span class="section-number">04</span>
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="inline-block text-primary-light uppercase tracking-widest mb-2 font-semibold text-xs">GET IN TOUCH</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 font-heading">Let's Build Something Together</h2>
+                        <div class="w-20 h-px bg-primary-medium mb-8"></div>
+                        <p class="text-primary-light mb-8 max-w-lg">
+                            Ready to discuss your project? Contact us today for a free consultation. We'll analyze your needs and propose a customized solution tailored to your business goals.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="contact-icon mr-6 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-primary-dark"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary-dark mb-1">Our Location</h4>
+                                    <p class="text-primary-light">123 Business Ave, Johannesburg, South Africa</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="contact-icon mr-6 flex-shrink-0">
+                                    <i class="fas fa-envelope text-primary-dark"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary-dark mb-1">Email Us</h4>
+                                    <p class="text-primary-light">info@inkwazidigital.co.za</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="contact-icon mr-6 flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-primary-dark"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary-dark mb-1">Call Us</h4>
+                                    <p class="text-primary-light">+27 12 345 6789</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="bg-neutral-light p-8 lg:p-12">
+                        <h3 class="text-2xl font-bold text-primary-dark mb-6">Send Us a Message</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-primary-dark mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-neutral-medium form-focus">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-primary-dark mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-neutral-medium form-focus">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-primary-dark mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-neutral-medium form-focus">
+                            </div>
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-primary-dark mb-2">Service Interested In</label>
+                                <select id="service" name="service" class="w-full px-4 py-3 border border-neutral-medium form-focus">
+                                    <option value="">Select a service</option>
+                                    <option value="SEO">Search Engine Optimization</option>
+                                    <option value="PPC">Pay-Per-Click Advertising</option>
+                                    <option value="Social">Social Media Marketing</option>
+                                    <option value="Web">Web Design & Development</option>
+                                    <option value="Content">Content Marketing</option>
+                                    <option value="Email">Email Marketing</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-primary-dark mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-neutral-medium form-focus"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary py-3 px-8 w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Footer -->
+        <footer class="footer pt-16 pb-8">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                    <div>
+                        <img src="https://inkwazidigital.co.za/wp-content/uploads/2023/07/Inkwazi-Digital-Logo-1-white.png" alt="Inkwazi Digital Logo" class="h-10 w-auto mb-6">
+                        <p class="text-neutral-light mb-6">
+                            Architecting digital success through strategic marketing solutions designed for sustainable growth.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="social-icon text-white"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon text-white"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg mb-6">Services</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">SEO Services</a></li>
+                            <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">PPC Advertising</a></li>
+                            <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Social Media Marketing</a></li>
+                            <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Web Design & Development</a></li>
+                            <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Content Marketing</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg mb-6">Company</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">About Us</a></li>
+                            <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Our Process</a></li>
+                            <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Case Studies</a></li>
+                            <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Blog</a></li>
+                            <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg mb-6">Contact Info</h4>
+                        <ul class="space-y-3 text-neutral-light">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-sm"></i>
+                                <span>123 Business Ave, Johannesburg, South Africa</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-3 text-sm"></i>
+                                <span>+27 12 345 6789</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-sm"></i>
+                                <span>info@inkwazidigital.co.za</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-primary-medium pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-neutral-light text-sm mb-4 md:mb-0">
+                            &copy; 2023 Inkwazi Digital. All rights reserved.
+                        </p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-neutral-light hover:text-white text-sm transition duration-300">Privacy Policy</a>
+                            <a href="#" class="text-neutral-light hover:text-white text-sm transition duration-300">Terms of Service</a>
+                            <a href="#" class="text-neutral-light hover:text-white text-sm transition duration-300">Sitemap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <!-- JavaScript -->
+        <script>
+            // Mobile Menu Toggle
+            function toggleMobileMenu() {
+                const menu = document.getElementById('mobile-menu');
+                const hamburger = document.getElementById('hamburger');
+                menu.classList.toggle('hidden');
+                hamburger.classList.toggle('open');
+            }
+    
+            // Scroll to sections smoothly
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            toggleMobileMenu();
+                        }
+                    }
+                });
+            });
+    
+            // Sticky Navigation
+            window.addEventListener('scroll', function() {
+                const nav = document.getElementById('main-nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('shadow-md');
+                    nav.classList.add('bg-white');
+                } else {
+                    nav.classList.remove('shadow-md');
+                    nav.classList.remove('bg-white');
+                }
+            });
+    
+            // Animate elements when they come into view
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.reveal');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('animate-fadeInUp');
+                    }
+                });
+            }
+    
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll);
+    
+            // Counter Animation
+            function animateCounters() {
+                const counters = document.querySelectorAll('.stats-counter');
+                const speed = 200;
+                
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(animateCounters, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                });
+            }
+    
+            // Start counter animation when stats section comes into view
+            const statsSection = document.querySelector('.bg-neutral-light');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+    
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+    
+            // Form Submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const service = document.getElementById('service').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Here you would typically send the data to your server
+                    // For demo purposes, we'll just log it and show an alert
+                    console.log({ name, email, phone, service, message });
+                    
+                    alert('Thank you for your message! We will get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+        </script>
+    </body>
+    </html>
