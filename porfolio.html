@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Portfolio — Inkwazi Digital | South African Creative Agency</title>
+  <meta name="description" content="Explore Inkwazi Digital's portfolio of web design, branding, and digital strategy projects for African businesses.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/WhatsApp Image 2025-06-09 at 11.19.27.jpeg">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1e3a8a',         // Deep Blue
+            primaryDark: '#374151',     // Charcoal
+            secondary: '#f59e0b',       // Gold
+            accent: '#fbbf24',          // Light Gold
+            primaryLight: '#f8fafc',    // Light Gray
+            neutral: {
+              light: '#f8fafc',         // Light Gray
+              gray: '#64748b',          // Dark Gray
+              dark: '#374151'           // Charcoal
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-primaryLight text-primaryDark font-sans antialiased">
+
+  <!-- Navigation -->
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+                <div class="flex justify-start lg:w-0 lg:flex-1">
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/WhatsApp Image 2025-06-09 at 11.19.27.jpeg" alt="Inkwazi Digital Logo" class="h-20 w-auto">
+                    </a>
+                </div>
+                <div class="-mr-2 -my-2 md:hidden">
+                    <button id="mobile-menu-toggle" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary focus:outline-none">
+                        <span class="sr-only">Open menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#Process" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Our Process</a>
+                    <a href="#Portfolio" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Portfolio</a>
+                    <a href="#Testimonial" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Testimonials</a>
+                    <a href="#Addyours" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Add Yours</a>
+                    <a href="#contact" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Contact</a>
+                </nav>
+                <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+                    <a href="#Addyours" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary hover:bg-primaryDark transition duration-150">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <nav class="px-2 pt-2 pb-4 space-y-1 bg-white ">
+                    <a href="#Process" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary">Our Process</a>
+                    <a href="#Portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary">Portfolio</a>
+                    <a href="#Testimonial" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary">Testimonials</a>
+                    <a href="#Addyours" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary">Add Yours</a>
+                    <!-- <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary">Contact</a> -->
+                    <a href="#Addyours" class="block mt-2 px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-primaryDark text-center">Get Started</a>
+                </nav>
+            </div>
+    </div>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.getElementById('mobile-menu-toggle');
+            const menu = document.getElementById('mobile-menu');
+            toggle.addEventListener('click', function () {
+                menu.classList.toggle('hidden');
+            });
+            // Optional: Hide menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButton = document.getElementById('mobile-menu-toggle');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            // Optionally reset the menu button icon (if you change it on open/close)
+            // mobileMenuButton.innerHTML = '<span class="sr-only">Open menu</span><i class="fas fa-bars text-xl"></i>';
+            });
+        });
+    </script>
+</header>
+
+  <!-- Hero Section -->
+  <section id="Home" class="relative bg-gradient-to-r from-primary to-primaryDark text-white overflow-hidden min-h-[50vh] flex items-center">
+    <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover opacity-30" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1800&q=80" alt="Digital design work">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    </div>
+    <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16"> 
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <span class="block">Our Portfolio</span> 
+                <span class="block text-accent mt-2">Work That Speaks</span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-primaryLight max-w-3xl mx-auto">
+                Explore our collection of successful projects that have helped African businesses grow and thrive in the digital space.
+            </p>
+        </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Filter -->
+  <section id="Portfolio" class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Our Work</h2>
+        <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
+          Featured Projects
+        </h3>
+        <p class="mt-4 max-w-2xl text-xl text-neutral-gray mx-auto">
+          Filter by service category to see specific examples of our work.
+        </p>
+      </div>
+
+      <!-- <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button class="px-4 py-2 rounded-full bg-primary text-white font-medium transition duration-150 filter-btn active" data-filter="all">
+          All Projects
+        </button>
+        <button class="px-4 py-2 rounded-full bg-primaryLight text-primaryDark font-medium hover:bg-primary hover:text-white transition duration-150 filter-btn" data-filter="web">
+          Web Design
+        </button>
+        <button class="px-4 py-2 rounded-full bg-primaryLight text-primaryDark font-medium hover:bg-primary hover:text-white transition duration-150 filter-btn" data-filter="branding">
+          Branding
+        </button>
+        <button class="px-4 py-2 rounded-full bg-primaryLight text-primaryDark font-medium hover:bg-primary hover:text-white transition duration-150 filter-btn" data-filter="ecommerce">
+          E-commerce
+        </button>
+        <button class="px-4 py-2 rounded-full bg-primaryLight text-primaryDark font-medium hover:bg-primary hover:text-white transition duration-150 filter-btn" data-filter="strategy">
+          Digital Strategy
+        </button>
+      </div> -->
+
+      <!-- Portfolio Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 portfolio-items">
+        <!-- Project 1 - Web Design -->
+        <div class="portfolio-item rounded-lg overflow-hidden shadow-lg bg-white transition-all duration-300 hover:shadow-xl" data-category="web">
+          <div class="relative overflow-hidden h-64">
+            <img class="w-full h-full object-cover transition duration-500 hover:scale-105" src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Website design project">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <h4 class="text-white text-xl font-bold mb-2">Umoya Energy</h4>
+                <p class="text-primaryLight">Responsive website for renewable energy company</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-primaryLight text-primary mb-2">Web Design</span>
+            <h3 class="text-xl font-bold text-primaryDark mb-2">Umoya Energy Website</h3>
+            <p class="text-neutral-gray">A modern, responsive website showcasing Umoya's renewable energy solutions across Africa.</p>
+            <a href="#" class="mt-4 inline-flex items-center text-primary font-medium hover:text-primaryDark transition duration-150">
+              View Case Study <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 - Branding -->
+        <div class="portfolio-item rounded-lg overflow-hidden shadow-lg bg-white transition-all duration-300 hover:shadow-xl" data-category="branding">
+          <div class="relative overflow-hidden h-64">
+            <img class="w-full h-full object-cover transition duration-500 hover:scale-105" src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Branding project">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <h4 class="text-white text-xl font-bold mb-2">AfroChic Boutique</h4>
+                <p class="text-primaryLight">Complete brand identity for fashion retailer</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-primaryLight text-primary mb-2">Branding</span>
+            <h3 class="text-xl font-bold text-primaryDark mb-2">AfroChic Brand Identity</h3>
+            <p class="text-neutral-gray">Complete brand strategy, logo design, and visual identity for contemporary African fashion brand.</p>
+            <a href="#" class="mt-4 inline-flex items-center text-primary font-medium hover:text-primaryDark transition duration-150">
+              View Case Study <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 - E-commerce -->
+        <div class="portfolio-item rounded-lg overflow-hidden shadow-lg bg-white transition-all duration-300 hover:shadow-xl" data-category="ecommerce">
+          <div class="relative overflow-hidden h-64">
+            <img class="w-full h-full object-cover transition duration-500 hover:scale-105" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="E-commerce project">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <h4 class="text-white text-xl font-bold mb-2">Zulu Crafts</h4>
+                <p class="text-primaryLight">E-commerce platform for artisanal goods</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-primaryLight text-primary mb-2">E-commerce</span>
+            <h3 class="text-xl font-bold text-primaryDark mb-2">Zulu Crafts Online Store</h3>
+            <p class="text-neutral-gray">Custom e-commerce solution helping African artisans reach global markets with their crafts.</p>
+            <a href="#" class="mt-4 inline-flex items-center text-primary font-medium hover:text-primaryDark transition duration-150">
+              View Case Study <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4 - Digital Strategy -->
+        <div class="portfolio-item rounded-lg overflow-hidden shadow-lg bg-white transition-all duration-300 hover:shadow-xl" data-category="strategy">
+          <div class="relative overflow-hidden h-64">
+            <img class="w-full h-full object-cover transition duration-500 hover:scale-105" src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Digital strategy project">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <h4 class="text-white text-xl font-bold mb-2">Safari Adventures</h4>
+                <p class="text-primaryLight">Digital transformation for tour operator</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-primaryLight text-primary mb-2">Digital Strategy</span>
+            <h3 class="text-xl font-bold text-primaryDark mb-2">Safari Adventures Digital Transformation</h3>
+            <p class="text-neutral-gray">Comprehensive digital strategy increasing bookings by 150% for luxury safari operator.</p>
+            <a href="#" class="mt-4 inline-flex items-center text-primary font-medium hover:text-primaryDark transition duration-150">
+              View Case Study <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5 - Web Design -->
+        <div class="portfolio-item rounded-lg overflow-hidden shadow-lg bg-white transition-all duration-300 hover:shadow-xl" data-category="web">
+          <div class="relative overflow-hidden h-64">
+            <img class="w-full h-full object-cover transition duration-500 hover:scale-105" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Website design project">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <h4 class="text-white text-xl font-bold mb-2">Nairobi Tech Hub</h4>
+                <p class="text-primaryLight">Website for co-working space</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-primaryLight text-primary mb-2">Web Design</span>
+            <h3 class="text-xl font-bold text-primaryDark mb-2">Nairobi Tech Hub Website</h3>
+            <p class="text-neutral-gray">Interactive website showcasing facilities and community of Kenya's premier tech workspace.</p>
+            <a href="#" class="mt-4 inline-flex items-center text-primary font-medium hover:text-primaryDark transition duration-150">
+              View Case Study <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6 - Branding -->
+        <div class="portfolio-item rounded-lg overflow-hidden shadow-lg bg-white transition-all duration-300 hover:shadow-xl" data-category="branding">
+          <div class="relative overflow-hidden h-64">
+            <img class="w-full h-full object-cover transition duration-500 hover:scale-105" src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Branding project">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <h4 class="text-white text-xl font-bold mb-2">Mama's Kitchen</h4>
+                <p class="text-primaryLight">Rebranding for restaurant chain</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-primaryLight text-primary mb-2">Branding</span>
+            <h3 class="text-xl font-bold text-primaryDark mb-2">Mama's Kitchen Rebrand</h3>
+            <p class="text-neutral-gray">Complete visual identity refresh for popular African cuisine restaurant franchise.</p>
+            <a href="#" class="mt-4 inline-flex items-center text-primary font-medium hover:text-primaryDark transition duration-150">
+              View Case Study <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="mt-12 text-center">
+        <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
+          Ready to start your project?
+        </a>
+      </div> -->
+    </div>
+  </section>
+
+  <section class="relative bg-primary text-white overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img class="w-full h-full object-cover opacity-20" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="Team working together">
+      <div class="absolute inset-0 bg-primaryDark bg-opacity-70"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16">
+      <div class="text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
+          Ready to create something amazing?
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl mx-auto">
+          Let's discuss how we can help bring your vision to life.
+        </p>
+        <div class="mt-8 flex justify-center">
+          <div class="inline-flex rounded-md shadow">
+            <a href="contact.html" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 transition duration-150">
+              Get Your Free Consultation
+              <i class="fas fa-arrow-right ml-3"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="Testimonial" class="py-16 bg-primaryLight">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Client Stories</h2>
+        <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
+          What Our Clients Say
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="flex-shrink-0">
+              <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80" alt="Nomvula Khumalo">
+            </div>
+            <div class="ml-4">
+              <h4 class="text-lg font-bold text-primaryDark">Nomvula Khumalo</h4>
+              <p class="text-neutral-gray">CEO, Umoya Energy</p>
+            </div>
+          </div>
+          <p class="text-neutral-gray italic">"Inkwazi Digital transformed our online presence completely. Our new website has helped us secure partnerships with three major international investors."</p>
+          <div class="mt-4 text-accent">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="flex-shrink-0">
+              <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80" alt="James Okafor">
+            </div>
+            <div class="ml-4">
+              <h4 class="text-lg font-bold text-primaryDark">James Okafor</h4>
+              <p class="text-neutral-gray">Founder, Zulu Crafts</p>
+            </div>
+          </div>
+          <p class="text-neutral-gray italic">"Our online sales increased by 300% after Inkwazi launched our e-commerce platform. They understood exactly how to showcase our products to international buyers."</p>
+          <div class="mt-4 text-accent">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="flex-shrink-0">
+              <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson">
+            </div>
+            <div class="ml-4">
+              <h4 class="text-lg font-bold text-primaryDark">Sarah Johnson</h4>
+              <p class="text-neutral-gray">Marketing Director, Safari Adventures</p>
+            </div>
+          </div>
+          <p class="text-neutral-gray italic">"The digital strategy Inkwazi developed helped us navigate the pandemic downturn and come out stronger. Our bookings are now at record levels."</p>
+          <div class="mt-4 text-accent">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <!-- <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="p-6">
+          <span class="text-4xl font-bold text-primary">150+</span>
+          <p class="mt-2 text-neutral-gray">Projects Completed</p>
+        </div>
+        <div class="p-6">
+          <span class="text-4xl font-bold text-primary">95%</span>
+          <p class="mt-2 text-neutral-gray">Client Satisfaction</p>
+        </div>
+        <div class="p-6">
+          <span class="text-4xl font-bold text-primary">50+</span>
+          <p class="mt-2 text-neutral-gray">Happy Clients</p>
+        </div>
+        <div class="p-6">
+          <span class="text-4xl font-bold text-primary">10+</span>
+          <p class="mt-2 text-neutral-gray">Industries Served</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Client Logos Section -->
+  <!-- <section class="py-12 bg-primaryLight">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h3 class="text-2xl font-bold text-primaryDark">
+          Trusted by African Businesses
+        </h3>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
+        <img src="https://via.placeholder.com/150x80?text=Client+1" alt="Client Logo" class="h-12 w-auto mx-auto opacity-70 hover:opacity-100 transition duration-300">
+        <img src="https://via.placeholder.com/150x80?text=Client+2" alt="Client Logo" class="h-12 w-auto mx-auto opacity-70 hover:opacity-100 transition duration-300">
+        <img src="https://via.placeholder.com/150x80?text=Client+3" alt="Client Logo" class="h-12 w-auto mx-auto opacity-70 hover:opacity-100 transition duration-300">
+        <img src="https://via.placeholder.com/150x80?text=Client+4" alt="Client Logo" class="h-12 w-auto mx-auto opacity-70 hover:opacity-100 transition duration-300">
+        <img src="https://via.placeholder.com/150x80?text=Client+5" alt="Client Logo" class="h-12 w-auto mx-auto opacity-70 hover:opacity-100 transition duration-300">
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Our Process Section -->
+  <section id="Process" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-base text-primary font-semibold tracking-wide uppercase">How We Work</h2>
+        <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
+          Our Creative Process
+        </h3>
+        <p class="mt-4 max-w-2xl text-xl text-neutral-gray mx-auto">
+          A structured approach to delivering exceptional results every time.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="text-center p-6">
+          <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white text-xl font-bold mb-4">1</div>
+          <h4 class="text-lg font-bold text-primaryDark mb-2">Discovery</h4>
+          <p class="text-neutral-gray">We learn about your business, goals, and challenges.</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white text-xl font-bold mb-4">2</div>
+          <h4 class="text-lg font-bold text-primaryDark mb-2">Strategy</h4>
+          <p class="text-neutral-gray">We develop a customized plan to achieve your objectives.</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white text-xl font-bold mb-4">3</div>
+          <h4 class="text-lg font-bold text-primaryDark mb-2">Execution</h4>
+          <p class="text-neutral-gray">Our team brings the strategy to life with creative solutions.</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white text-xl font-bold mb-4">4</div>
+          <h4 class="text-lg font-bold text-primaryDark mb-2">Delivery</h4>
+          <p class="text-neutral-gray">We launch your project and provide ongoing support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add Testimonial Section -->
+  <section id="Addyours" class="py-16 bg-primaryLight">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold text-center text-primaryDark mb-6">Share Your Experience</h3>
+          <form class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-neutral-gray mb-1">Your Name</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+            </div>
+            <div>
+              <label for="company" class="block text-sm font-medium text-neutral-gray mb-1">Your Company</label>
+              <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+            </div>
+            <div>
+              <label for="testimonial" class="block text-sm font-medium text-neutral-gray mb-1">Your Testimonial</label>
+              <textarea id="testimonial" name="testimonial" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
+            </div>
+            <div>
+              <label for="rating" class="block text-sm font-medium text-neutral-gray mb-1">Rating</label>
+              <div class="flex space-x-2">
+                <button type="button" class="text-gray-400 hover:text-accent focus:outline-none" data-rating="1">
+                  <i class="far fa-star text-2xl"></i>
+                </button>
+                <button type="button" class="text-gray-400 hover:text-accent focus:outline-none" data-rating="2">
+                  <i class="far fa-star text-2xl"></i>
+                </button>
+                <button type="button" class="text-gray-400 hover:text-accent focus:outline-none" data-rating="3">
+                  <i class="far fa-star text-2xl"></i>
+                </button>
+                <button type="button" class="text-gray-400 hover:text-accent focus:outline-none" data-rating="4">
+                  <i class="far fa-star text-2xl"></i>
+                </button>
+                <button type="button" class="text-gray-400 hover:text-accent focus:outline-none" data-rating="5">
+                  <i class="far fa-star text-2xl"></i>
+                </button>
+              </div>
+              <input type="hidden" id="rating" name="rating" value="0">
+            </div>
+            <div>
+              <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primaryDark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150">
+                Submit Testimonial
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Rating stars functionality for testimonial form
+    document.addEventListener('DOMContentLoaded', function() {
+      const stars = document.querySelectorAll('[data-rating]');
+      const ratingInput = document.getElementById('rating');
+      
+      stars.forEach(star => {
+        star.addEventListener('click', function() {
+          const ratingValue = parseInt(this.getAttribute('data-rating'));
+          ratingInput.value = ratingValue;
+          
+          // Update star display
+          stars.forEach((s, index) => {
+            if (index < ratingValue) {
+              s.innerHTML = '<i class="fas fa-star text-2xl text-accent"></i>';
+            } else {
+              s.innerHTML = '<i class="far fa-star text-2xl text-gray-400"></i>';
+            }
+          });
+        });
+        
+        // Optional hover effect
+        star.addEventListener('mouseover', function() {
+          const hoverValue = parseInt(this.getAttribute('data-rating'));
+          stars.forEach((s, index) => {
+            if (index < hoverValue) {
+              s.innerHTML = '<i class="fas fa-star text-2xl text-accent"></i>';
+            }
+          });
+        });
+        
+        star.addEventListener('mouseout', function() {
+          const currentRating = parseInt(ratingInput.value);
+          stars.forEach((s, index) => {
+            if (index >= currentRating) {
+              s.innerHTML = '<i class="far fa-star text-2xl text-gray-400"></i>';
+            }
+          });
+        });
+      });
+    });
+  </script>
+ 
+
+  <!-- Footer -->
+  <footer class="pt-16 pb-8 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <!-- Brand & Social -->
+            <div>
+                <img src="images/logo_inkwazi.webp" alt="Inkwazi Digital Logo" class="h-16 w-auto mb-6">
+                <p class="text-primaryLight mb-6">
+                    Architecting digital success through strategic marketing solutions designed for sustainable growth.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Company Links -->
+            <div>
+                <h4 class="text-white font-bold text-lg mb-6">Company</h4>
+                <ul class="space-y-3">
+                    <li><a href="#Home" class="text-primaryLight hover:text-accent transition">About Us</a></li>
+                    <li><a href="#Process" class="text-primaryLight hover:text-accent transition">Our Process</a></li>
+                    <li><a href="#Portfolio" class="text-primaryLight hover:text-accent transition">Case Studies</a></li>
+                    <li><a href="#Testimonial" class="text-primaryLight hover:text-accent transition">Testimonials</a></li>
+                    <li><a href="#Addyours" class="text-primaryLight hover:text-accent transition">Add Yours</a></li>
+                    <!-- <li><a href="#contact" class="text-primaryLight hover:text-accent transition">Contact Us</a></li> -->
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-white font-bold text-lg mb-6">Contact Info</h4>
+                <ul class="space-y-3 text-primaryLight">
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-sm"></i>
+                        <span>123 Business Ave, Johannesburg, South Africa</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-phone-alt mt-1 mr-3 text-sm"></i>
+                        <span>+27 12 345 6789</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-envelope mt-1 mr-3 text-sm"></i>
+                        <span>info@inkwazidigital.co.za</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-primaryLight text-sm mb-4 md:mb-0">
+                    &copy; 2023 Inkwazi Digital. All rights reserved.
+                </p>
+                <!-- <div class="flex space-x-6">
+                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Terms of Service</a>
+                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Sitemap</a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <script>
+    // Portfolio filtering functionality
+    // document.addEventListener('DOMContentLoaded', function() {
+    //   const filterButtons = document.querySelectorAll('.filter-btn');
+    //   const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    //   filterButtons.forEach(button => {
+    //     button.addEventListener('click', function() {
+    //       // Remove active class from all buttons
+    //       filterButtons.forEach(btn => btn.classList.remove('active', 'bg-primary', 'text-white'));
+    //       filterButtons.forEach(btn => btn.classList.add('bg-primaryLight', 'text-primaryDark'));
+          
+    //       // Add active class to clicked button
+    //       this.classList.add('active', 'bg-primary', 'text-white');
+    //       this.classList.remove('bg-primaryLight', 'text-primaryDark');
+          
+    //       const filterValue = this.getAttribute('data-filter');
+          
+    //       portfolioItems.forEach(item => {
+    //         if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+    //           item.style.display = 'block';
+    //         } else {
+    //           item.style.display = 'none';
+    //         }
+    //       });
+    //     });
+    //   });
+
+      // Initialize Isotope for filtering (if you want more advanced filtering)
+      // You would need to include the Isotope library for this to work
+      // Alternatively, the simple JavaScript above provides basic filtering
+    // });
+  </script>
+</body>
+</html>

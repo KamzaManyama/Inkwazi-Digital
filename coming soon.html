@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Your Brand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        primaryDark: '#1D4ED8',
+                        accent: '#10B981',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col">
+        <!-- Main Content -->
+        <main class="flex-grow flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center w-full">
+                <div class="max-w-3xl mx-auto">
+                    <!-- Logo/Brand -->
+                    <div class="mb-8">
+                        <img src="images/WhatsApp Image 2025-06-09 at 11.19.27.jpeg" alt="Your Brand Logo" class="mx-auto h-16 mb-2">
+                    </div>
+                    
+                    <!-- Heading -->
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                        Something <span class="text-accent">Awesome</span> is Coming
+                    </h1>
+                    
+                    <!-- Description -->
+                    <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                        We're working hard to launch our new website. Stay tuned for updates and be the first to know when we go live!
+                    </p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="flex justify-center gap-4 mb-12">
+                        <div class="bg-white p-4 rounded-lg shadow-md w-20">
+                            <div class="text-3xl font-bold text-primary" id="days">00</div>
+                            <div class="text-sm text-gray-500">Days</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md w-20">
+                            <div class="text-3xl font-bold text-primary" id="hours">00</div>
+                            <div class="text-sm text-gray-500">Hours</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md w-20">
+                            <div class="text-3xl font-bold text-primary" id="minutes">00</div>
+                            <div class="text-sm text-gray-500">Minutes</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md w-20">
+                            <div class="text-3xl font-bold text-primary" id="seconds">00</div>
+                            <div class="text-sm text-gray-500">Seconds</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Email Signup Form -->
+                    <div class="max-w-md mx-auto mb-12">
+                        <form class="flex flex-col sm:flex-row gap-2">
+                            <input type="email" placeholder="Enter your email" required 
+                                   class="flex-grow px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <button type="submit" 
+                                    class="px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-primaryDark transition duration-200">
+                                Notify Me
+                            </button>
+                        </form>
+                        <p class="text-sm text-gray-500 mt-2">We respect your privacy. Unsubscribe at any time.</p>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex justify-center gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-200">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-200">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-200">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-200">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="py-6 text-center text-gray-500 text-sm">
+            <p>© <span id="year"></span>  All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Countdown timer (7 days from now)
+        const now = new Date();
+        const launchDate = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000).getTime();
+
+        function updateCountdown() {
+            const current = new Date().getTime();
+            const distance = launchDate - current;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        updateCountdown();
+        const countdownTimer = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

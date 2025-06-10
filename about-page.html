@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Inkwazi Digital — South African Creative Agency</title>
+  <meta name="description" content="Learn about Inkwazi Digital, a South African creative agency specializing in web design, branding, and digital strategy for African businesses.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/WhatsApp Image 2025-06-09 at 11.19.27.jpeg">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1e3a8a',         // Deep Blue
+            primaryDark: '#374151',     // Charcoal
+            secondary: '#f59e0b',       // Gold
+            accent: '#fbbf24',          // Light Gold
+            primaryLight: '#f8fafc',    // Light Gray
+            neutral: {
+              light: '#f8fafc',         // Light Gray
+              gray: '#64748b',          // Dark Gray
+              dark: '#374151'           // Charcoal
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-primaryLight text-primaryDark font-sans antialiased">
+
+  <!-- Navigation -->
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+            <div class="flex justify-start lg:w-0 lg:flex-1">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/WhatsApp Image 2025-06-09 at 11.19.27.jpeg" alt="Inkwazi Digital Logo" class="h-20 w-auto">
+                </a>
+            </div>
+            <div class="-mr-2 -my-2 md:hidden">
+                <button id="mobile-menu-toggle" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary focus:outline-none">
+                    <span class="sr-only">Open menu</span>
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#Home" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Home</a>
+                <a href="#Who-are-we" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Who We Are</a>
+                <a href="#mission" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Mission</a>
+                <a href="#whta-we-do" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">What We Do</a>
+                <a href="#values" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Values</a>
+                <a href="#contact" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Contact</a>
+            </nav>
+            <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+                <a href="#contact" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary hover:bg-primaryDark transition duration-150">
+                    Get Started
+                </a>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <nav class="px-2 pt-2 pb-4 space-y-1 bg-white ">
+                <a href="#Home" class="text-base font-medium text-neutral-gray transition duration-150 hover:text-primary">Home</a>
+                <a href="#Who-are-we" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary">Who We Are</a>
+                <a href="#mission" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary">Mission</a>
+                <a href="#whta-we-do" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary">What We Do</a>
+                <a href="#values" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary">Values</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary">Contact</a>
+                <a href="#contact" class="block mt-2 px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-primaryDark text-center">Get Started</a>
+            </nav>
+        </div>
+    </div>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.getElementById('mobile-menu-toggle');
+            const menu = document.getElementById('mobile-menu');
+            toggle.addEventListener('click', function () {
+                menu.classList.toggle('hidden');
+            });
+            // Optional: Hide menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButton = document.getElementById('mobile-menu-toggle');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            // Optionally reset the menu button icon (if you change it on open/close)
+            // mobileMenuButton.innerHTML = '<span class="sr-only">Open menu</span><i class="fas fa-bars text-xl"></i>';
+            });
+        });
+    </script>
+</header>
+
+  <!-- Hero Section -->
+  <section id="Home" class="relative bg-gradient-to-r from-primary to-primaryDark text-white overflow-hidden min-h-[50vh] flex items-center">
+    <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover opacity-30" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1800&q=80" alt="Inkwazi Digital team working">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    </div>
+    <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16"> 
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <span class="block">Our Story</span> 
+                <span class="block text-accent mt-2">Who We Are</span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-primaryLight max-w-3xl mx-auto">
+                A South African creative agency focused on delivering impactful digital solutions that help businesses grow and stand out.
+            </p>
+        </div>
+    </div>
+  </section>
+
+  <!-- Who We Are Section -->
+  <section id="Who-are-we" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div class="mb-12 lg:mb-0">
+          <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Who We Are</h2>
+          <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
+            More Than Just a Digital Agency
+          </h3>
+          <p class="mt-4 text-lg text-neutral-gray">
+            Inkwazi Digital is a South African creative agency with a passion for empowering African businesses through innovative digital solutions. Founded in 2018, we've grown from a small design studio to a full-service digital agency serving clients across multiple industries.
+          </p>
+          <p class="mt-4 text-lg text-neutral-gray">
+            Our name "Inkwazi" (Zulu for Fish Eagle) reflects our vision - to help businesses soar to new heights with clarity and precision, just like this majestic bird spots opportunities from above.
+          </p>
+          
+          <div class="mt-8 space-y-6">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 bg-primary rounded-md p-2">
+                <i class="fas fa-bullseye text-white text-lg"></i>
+              </div>
+              <div class="ml-4">
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Our Focus</h4> -->
+                <p class="mt-1 text-neutral-gray">We specialize in web design, branding, and digital strategy that creates measurable impact for our clients.</p>
+              </div>
+            </div>
+  
+            <div class="flex items-start">
+              <div class="flex-shrink-0 bg-primary rounded-md p-2">
+                <i class="fas fa-map-marker-alt text-white text-lg"></i>
+              </div>
+              <div class="ml-4">
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Our Roots</h4> -->
+                <p class="mt-1 text-neutral-gray">Based in Phumula, KwaNdebele, we're deeply connected to the African business landscape and its unique challenges.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="relative">
+          <img class="w-full rounded-lg shadow-xl" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Inkwazi Digital team working together">
+          <div class="absolute -bottom-6 -right-6 bg-accent p-6 rounded-lg shadow-lg hidden lg:block">
+            <div class="text-center">
+              <p class="text-3xl font-bold text-primaryDark">85+</p>
+              <p class="text-primaryDark font-medium">Projects Completed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section id="mission" class="py-16 bg-primaryLight">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div class="relative mb-12 lg:order-last lg:mb-0">
+          <img class="w-full rounded-lg shadow-xl" src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="African entrepreneur working">
+          <div class="absolute -bottom-6 -left-6 bg-primary p-6 rounded-lg shadow-lg hidden lg:block">
+            <div class="text-center text-white">
+              <p class="text-3xl font-bold">90%</p>
+              <p class="font-medium">Client Retention Rate</p>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Our Mission</h2>
+          <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
+            Empowering African Businesses
+          </h3>
+          <p class="mt-4 text-lg text-neutral-gray">
+            Our mission is to empower African entrepreneurs and businesses with world-class digital experiences that drive growth, innovation, and long-term success.
+          </p>
+          
+          <div class="mt-8 space-y-6">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 bg-primary rounded-md p-2">
+                <i class="fas fa-globe-africa text-white text-lg"></i>
+              </div>
+              <div class="ml-4">
+                <!-- <h4 class="text-lg font-medium text-primaryDark">African Focus</h4> -->
+                <p class="mt-1 text-neutral-gray">We understand the unique challenges and opportunities of doing business in Africa's diverse markets.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 bg-primary rounded-md p-2">
+                <i class="fas fa-chart-line text-white text-lg"></i>
+              </div>
+              <div class="ml-4">
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Growth-Oriented</h4> -->
+                <p class="mt-1 text-neutral-gray">Every solution we create is designed to help our clients achieve sustainable business growth.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 bg-primary rounded-md p-2">
+                <i class="fas fa-lightbulb text-white text-lg"></i>
+              </div>
+              <div class="ml-4">
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Innovation Driven</h4> -->
+                <p class="mt-1 text-neutral-gray">We combine global best practices with local insights to deliver innovative solutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do Section -->
+  <section id="whta-we-do" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-base text-primary font-semibold tracking-wide uppercase">What We Do</h2>
+        <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
+          Our Core Services
+        </h3>
+        <p class="mt-4 max-w-2xl text-xl text-neutral-gray mx-auto">
+          We specialize in these key areas to help your business thrive digitally.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Service 1 -->
+        <div class="bg-primaryLight rounded-lg p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-laptop-code text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">Custom Website Design & Development</h3>
+          <p class="mt-4 text-neutral-gray">
+            Beautiful, functional websites tailored to your business needs, from simple brochures to complex e-commerce platforms.
+          </p>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="bg-primaryLight rounded-lg p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-palette text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">Brand Identity & Strategy</h3>
+          <p class="mt-4 text-neutral-gray">
+            Comprehensive branding solutions that communicate your unique value and resonate with your target audience.
+          </p>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="bg-primaryLight rounded-lg p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-shopping-cart text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">E-commerce Optimization</h3>
+          <p class="mt-4 text-neutral-gray">
+            Turn your online store into a sales machine with our conversion-focused e-commerce solutions.
+          </p>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="bg-primaryLight rounded-lg p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-chart-pie text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">Digital Consulting</h3>
+          <p class="mt-4 text-neutral-gray">
+            Strategic guidance to help you navigate the digital landscape and make informed decisions.
+          </p>
+        </div>
+        
+        <!-- Service 5 -->
+        <div class="bg-primaryLight rounded-lg p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-file-certificate text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">Compliance Solutions</h3>
+          <p class="mt-4 text-neutral-gray">
+            Ensure your business meets all regulatory requirements with our comprehensive compliance services.
+          </p>
+        </div>
+        
+        <!-- Service 6 -->
+        <div class="bg-primaryLight rounded-lg p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-mobile-alt text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">UX/UI Design</h3>
+          <p class="mt-4 text-neutral-gray">
+            Intuitive, user-friendly interfaces that enhance customer experience and drive engagement.
+          </p>
+        </div>
+      </div>
+      
+    
+    </div>
+  </section>
+
+  <!-- Our Impact Section -->
+  <section class="py-16 bg-primary text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-base text-accent font-semibold tracking-wide uppercase">Our Impact</h2>
+        <h3 class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
+          By The Numbers
+        </h3>
+        <p class="mt-4 max-w-2xl text-xl text-primaryLight mx-auto">
+          The results we've achieved for our clients and our business.
+        </p>
+      </div>
+  
+      <div class="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4 text-center">
+        <div class="p-6">
+          <div class="text-4xl font-bold mb-2">85+</div>
+          <p class="text-primaryLight uppercase text-sm tracking-wider">Projects Completed</p>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl font-bold mb-2">90%</div>
+          <p class="text-primaryLight uppercase text-sm tracking-wider">Client Retention</p>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl font-bold mb-2">7+</div>
+          <p class="text-primaryLight uppercase text-sm tracking-wider">Years Experience</p>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl font-bold mb-2">120+</div>
+          <p class="text-primaryLight uppercase text-sm tracking-wider">Websites Optimized</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section id="values" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Our Values</h2>
+        <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
+          What Guides Us
+        </h3>
+        <p class="mt-4 max-w-2xl text-xl text-neutral-gray mx-auto">
+          The principles that shape everything we do at Inkwazi Digital.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-8 md:grid-cols-3">
+        <!-- Value 1 -->
+        <div class="bg-primaryLight rounded-xl p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-paint-brush text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">Creativity with Purpose</h3>
+          <p class="mt-4 text-neutral-gray">
+            We don't just create beautiful designs - we craft solutions that solve real business problems and drive measurable results.
+          </p>
+        </div>
+        
+        <!-- Value 2 -->
+        <div class="bg-primaryLight rounded-xl p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-medal text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">Excellence in Execution</h3>
+          <p class="mt-4 text-neutral-gray">
+            We're committed to delivering work of the highest quality, paying attention to every detail to ensure outstanding outcomes.
+          </p>
+        </div>
+        
+        <!-- Value 3 -->
+        <div class="bg-primaryLight rounded-xl p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-hands-helping text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">Transparent Collaboration</h3>
+          <p class="mt-4 text-neutral-gray">
+            We believe in open communication and working closely with our clients as partners in their success.
+          </p>
+        </div>
+        
+        <!-- Value 4 -->
+        <div class="bg-primaryLight rounded-xl p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-globe-africa text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">Local Insight, Global Standards</h3>
+          <p class="mt-4 text-neutral-gray">
+            We combine deep understanding of African markets with world-class digital expertise to deliver exceptional results.
+          </p>
+        </div>
+        
+        <!-- Value 5 -->
+        <div class="bg-primaryLight rounded-xl p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-heart text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">Passion for Growth</h3>
+          <p class="mt-4 text-neutral-gray">
+            We're genuinely invested in our clients' success and take pride in seeing their businesses flourish.
+          </p>
+        </div>
+        
+        <!-- Value 6 -->
+        <div class="bg-primaryLight rounded-xl p-8 hover:shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-lightbulb text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark">Continuous Innovation</h3>
+          <p class="mt-4 text-neutral-gray">
+            We stay ahead of digital trends to ensure our clients benefit from the latest technologies and strategies.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative bg-primary text-white overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img class="w-full h-full object-cover opacity-20" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="Team working together">
+      <div class="absolute inset-0 bg-primaryDark bg-opacity-70"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16">
+      <div class="text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
+          Ready to transform your business?
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl mx-auto">
+          Let's discuss how we can help you achieve your goals.
+        </p>
+        <!-- <div class="mt-8 flex justify-center">
+          <div class="inline-flex rounded-md shadow">
+            <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 transition duration-150">
+              Get Your Free Consultation
+              <i class="fas fa-arrow-right ml-3"></i>
+            </a>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+   <!-- Contact Section -->
+   <section id="contact" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16">
+        <div class="mb-12 lg:mb-0">
+          <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Contact Us</h2>
+          <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
+            Let's Build Something Great
+          </h3>
+          <p class="mt-4 text-lg text-neutral-gray">
+            Whether you're ready to start a project or just have questions, we'd love to hear from you.
+          </p>
+          
+          <div class="mt-8 space-y-6">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 bg-primary rounded-md p-3">
+                <i class="fas fa-map-marker-alt text-white"></i>
+              </div>
+              <div class="ml-4">
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Our Office</h4> -->
+                <p class="mt-1 text-neutral-gray">123 Business Park, Sandton<br>Johannesburg, 2196</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 bg-primary rounded-md p-3">
+                <i class="fas fa-phone-alt text-white"></i>
+              </div>
+              <div class="ml-4">
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Phone</h4> -->
+                <p class="mt-1 text-neutral-gray">+27 11 123 4567<br>Mon-Fri, 8am-5pm</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 bg-primary rounded-md p-3">
+                <i class="fas fa-envelope text-white"></i>
+              </div>
+              <div class="ml-4">
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Email</h4> -->
+                <p class="mt-1 text-neutral-gray">hello@inkwazi.digital<br>We respond within 24 hours</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-12">
+            <h4 class="text-lg font-medium text-primaryDark">Follow Us</h4>
+            <div class="mt-4 flex space-x-8">
+              <a href="#" class="text-neutral-gray hover:text-primary transition duration-150">
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+              <a href="#" class="text-neutral-gray hover:text-primary transition duration-150">
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a href="#" class="text-neutral-gray hover:text-primary transition duration-150">
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a href="#" class="text-neutral-gray hover:text-primary transition duration-150">
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-primaryLight rounded-xl p-8 shadow-md">
+          <h3 class="text-xl font-bold text-primaryDark mb-6">Send Us a Message</h3>
+          <form class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-primaryDark">Your Name</label>
+              <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary">
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-primaryDark">Email Address</label>
+              <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary">
+            </div>
+            
+            <div>
+              <label for="phone" class="block text-sm font-medium text-primaryDark">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary">
+            </div>
+            
+            <div>
+              <label for="service" class="block text-sm font-medium text-primaryDark">Service Interested In</label>
+              <select id="service" name="service" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary">
+                <option>Branding</option>
+                <option>Web Design</option>
+                <option>Compliance</option>
+                <option>Multiple Services</option>
+                <option>Not Sure Yet</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-primaryDark">Your Message</label>
+              <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary"></textarea>
+            </div>
+            
+            <div>
+              <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primaryDark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150">
+                Send Message
+                <i class="fas fa-paper-plane ml-2"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="pt-16 pb-8 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <!-- Brand & Social -->
+            <div>
+                <img src="images/logo_inkwazi.webp" alt="Inkwazi Digital Logo" class="h-16 w-auto mb-6">
+                <p class="text-primaryLight mb-6">
+                    Architecting digital success through strategic marketing solutions designed for sustainable growth.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Company Links -->
+            <div>
+                <h4 class="text-white font-bold text-lg mb-6">Company</h4>
+                <ul class="space-y-3">
+                    <li><a href="#Home" class="text-primaryLight hover:text-accent transition">Home</a></li>
+                    <li><a href="#Who-are-we" class="text-primaryLight hover:text-accent transition">Who We Are</a></li>
+                    <li><a href="#mission" class="text-primaryLight hover:text-accent transition">Mission</a></li>
+                    <li><a href="#whta-we-do" class="text-primaryLight hover:text-accent transition">What We Do</a></li>
+                    <li><a href="#values" class="text-primaryLight hover:text-accent transition">Values</a></li>
+                    <li><a href="#contact" class="text-primaryLight hover:text-accent transition">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-white font-bold text-lg mb-6">Contact Info</h4>
+                <ul class="space-y-3 text-primaryLight">
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-sm"></i>
+                        <span>123 Business Ave, Johannesburg, South Africa</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-phone-alt mt-1 mr-3 text-sm"></i>
+                        <span>+27 12 345 6789</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-envelope mt-1 mr-3 text-sm"></i>
+                        <span>info@inkwazidigital.co.za</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-primaryLight text-sm mb-4 md:mb-0">
+                    &copy; 2023 Inkwazi Digital. All rights reserved.
+                </p>
+                <!-- <div class="flex space-x-6">
+                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Terms of Service</a>
+                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Sitemap</a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <script>
+    // Simple counter animation for stats
+    document.addEventListener('DOMContentLoaded', function() {
+      const counters = document.querySelectorAll('.text-4xl.font-bold');
+      const speed = 200;
+      
+      counters.forEach(counter => {
+        const target = +counter.innerText.replace('+', '');
+        const count = 0;
+        const increment = target / speed;
+        
+        if (count < target) {
+          counter.innerText = '0';
+          
+          const updateCount = () => {
+            const current = +counter.innerText;
+            const incrementValue = Math.ceil(target / speed);
+            
+            if (current < target) {
+              counter.innerText = Math.ceil(current + incrementValue);
+              setTimeout(updateCount, 1);
+            } else {
+              counter.innerText = target;
+              if (counter.innerText.includes('+')) {
+                counter.innerText += '+';
+              }
+            }
+          };
+          
+          // Start counting when element is in viewport
+          const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+              updateCount();
+              observer.unobserve(counter);
+            }
+          });
+          
+          observer.observe(counter);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
