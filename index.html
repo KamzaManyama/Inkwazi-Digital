@@ -38,36 +38,110 @@
   <!-- Navigation -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
-        <div class="flex justify-start lg:w-0 lg:flex-1">
-          <a href="#" class="flex items-center">
-            <img src="images/WhatsApp Image 2025-06-09 at 11.19.27.jpeg" alt="Inkwazi Digital Logo" class="h-20 w-auto">
-          </a>
+        <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+            <div class="flex justify-start lg:w-0 lg:flex-1">
+                <a href="#" class="flex items-center">
+                    <img src="images/WhatsApp Image 2025-06-09 at 11.19.27.jpeg" alt="Inkwazi Digital Logo" class="h-20 w-auto">
+                </a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="-mr-2 -my-2 md:hidden">
+                <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary focus:outline-none">
+                    <span class="sr-only">Open menu</span>
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Desktop navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <!-- <a href="#Home" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Home</a> -->
+                <a href="#about" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">About</a>
+                <a href="#services" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Services</a>
+                <a href="#process" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Process</a>
+                <a href="#portfolio" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Portfolio</a>
+                <a href="#pricing" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Pricing</a>
+                <a href="#contact" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Contact</a>
+            </nav>
+            
+            <!-- Desktop CTA button -->
+            <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+                <a href="#contact" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary hover:bg-primaryDark transition duration-150">
+                    Get Started
+                </a>
+            </div>
         </div>
-        <div class="-mr-2 -my-2 md:hidden">
-          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary focus:outline-none">
-            <span class="sr-only">Open menu</span>
-            <i class="fas fa-bars text-xl"></i>
-          </button>
-        </div>
-        <nav class="hidden md:flex space-x-8">
-          <a href="#services" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Services</a>
-          <a href="#process" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Process</a>
-          <a href="#portfolio" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Portfolio</a>
-          <a href="#pricing" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Pricing</a>
-          <a href="#about" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">About</a>
-        </nav>
-        <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-          <a href="#contact" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary hover:bg-primaryDark transition duration-150">
-            Get Started
-          </a>
-        </div>
-      </div>
     </div>
-  </header>
+    
+    <!-- Mobile menu (hidden by default) -->
+    <div class="md:hidden hidden origin-top absolute top-full left-0 right-0 bg-white shadow-lg" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <!-- <a href="#Home" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Home</a> -->
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">About</a>
+            <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">Services</a>
+            <a href="#process" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">Process</a>
+            <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">Portfolio</a>
+            <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">Pricing</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">Contact</a>
+            <a href="#contact" class="block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-primaryDark text-center">
+                Get Started
+            </a>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                // Show menu
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('animate-fadeInDown');
+                // Change icon to 'X'
+                mobileMenuButton.innerHTML = '<span class="sr-only">Close menu</span><i class="fas fa-times text-xl"></i>';
+            } else {
+                // Hide menu
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('animate-fadeInDown');
+                // Change icon back to bars
+                mobileMenuButton.innerHTML = '<span class="sr-only">Open menu</span><i class="fas fa-bars text-xl"></i>';
+            }
+        });
+        
+        // Close menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.innerHTML = '<span class="sr-only">Open menu</span><i class="fas fa-bars text-xl"></i>';
+            });
+        });
+    });
+</script>
+
+<style>
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate-fadeInDown {
+        animation: fadeInDown 0.3s ease-out;
+    }
+</style>
 
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-r from-primary to-primaryDark text-white overflow-hidden min-h-[85vh] flex items-center">
+  <section id="Home" class="relative bg-gradient-to-r from-primary to-primaryDark text-white overflow-hidden min-h-[85vh] flex items-center">
     <div class="absolute inset-0 z-0">
         <img class="w-full h-full object-cover opacity-30" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="Business team working">
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -86,7 +160,7 @@
                     <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 transition duration-150">
                         Get Your Free Quote
                     </a>
-                    <a href="#services" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-primaryDark hover:bg-opacity-90 transition duration-150">
+                    <a href="#services" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-secondary hover:bg-opacity-90 transition duration-150">
                         Explore Services
                     </a>
                 </div>
@@ -97,29 +171,6 @@
     </div>
 </section>
 
-  <!-- Trust Badges -->
-  <!-- <div class="bg-primaryLight py-8 border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-center text-neutral-gray mb-6">Trusted by businesses across South Africa</p>
-      <div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
-        <div class="col-span-1 flex justify-center items-center opacity-70 hover:opacity-100 transition duration-150">
-          <img class="h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple">
-        </div>
-        <div class="col-span-1 flex justify-center items-center opacity-70 hover:opacity-100 transition duration-150">
-          <img class="h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage">
-        </div>
-        <div class="col-span-1 flex justify-center items-center opacity-70 hover:opacity-100 transition duration-150">
-          <img class="h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
-        </div>
-        <div class="col-span-1 flex justify-center items-center opacity-70 hover:opacity-100 transition duration-150">
-          <img class="h-12" src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" alt="Transistor">
-        </div>
-        <div class="col-span-1 flex justify-center items-center opacity-70 hover:opacity-100 transition duration-150">
-          <img class="h-12" src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg" alt="Workcation">
-        </div>
-      </div>
-    </div>
-  </div> -->
 
   <!-- About Section -->
   <section id="about" class="py-16 bg-white">
@@ -128,56 +179,55 @@
         <div class="mb-12 lg:mb-0">
           <h2 class="text-base text-primary font-semibold tracking-wide uppercase">About Us</h2>
           <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
-            South African Business Experts
+            Empowering South African Entrepreneurs
           </h3>
           <p class="mt-4 text-lg text-neutral-gray">
-            Founded in 2018, Inkwazi Digital was born from a passion for helping South African businesses thrive in the digital age. We understand the unique challenges and opportunities of our local market.
+            Inkwazi Digital is a brand strategy and online marketing consultancy based in Phumula, KwaNdebele. Since 2018, we've been dedicated to helping emerging businesses in South Africa establish a strong digital presence and succeed in a competitive marketplace.
           </p>
-          
+  
           <div class="mt-8 space-y-6">
-            
-            
             <div class="flex items-start">
               <div class="flex-shrink-0 bg-primary rounded-md p-2">
-                <i class="fas fa-trophy text-white text-lg"></i>
+                <i class="fas fa-briefcase text-white text-lg"></i>
               </div>
               <div class="ml-4">
-                <h4 class="text-lg font-medium text-primaryDark">Proven Track Record</h4>
-                <p class="mt-1 text-neutral-gray">150+ successful projects completed for satisfied clients</p>
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Comprehensive Services</h4> -->
+                <p class="mt-1 text-neutral-gray text-sl">We offer graphic design, digital marketing, website design, and business administration support.</p>
               </div>
             </div>
-            
+  
             <div class="flex items-start">
               <div class="flex-shrink-0 bg-primary rounded-md p-2">
-                <i class="fas fa-map-marker-alt text-white text-lg"></i>
+                <i class="fas fa-handshake text-white text-lg"></i>
               </div>
               <div class="ml-4">
-                <h4 class="text-lg font-medium text-primaryDark">Local Expertise</h4>
-                <p class="mt-1 text-neutral-gray">Deep understanding of South African business regulations and market dynamics</p>
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Partnering for Growth</h4> -->
+                <p class="mt-1 text-neutral-gray">We collaborate with clients to build functional websites and visually striking brands that resonate with their audience.</p>
               </div>
             </div>
           </div>
-
+  
           <div class="mt-10">
-            <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
+            <a href="about-page.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
               Learn More About Us
               <i class="fas fa-arrow-right ml-2"></i>
             </a>
           </div>
         </div>
-        
+  
         <div class="relative">
           <img class="w-full rounded-lg shadow-xl" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Inkwazi Digital team">
           <div class="absolute -bottom-6 -right-6 bg-accent p-6 rounded-lg shadow-lg hidden lg:block">
             <div class="text-center">
-              <p class="text-3xl font-bold text-primaryDark">12+</p>
-              <p class="text-primaryDark font-medium">Years Combined Experience</p>
+              <p class="text-3xl font-bold text-primaryDark">38+</p>
+              <p class="text-primaryDark font-medium">Projects Delivered</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
 
   <!-- Services Section -->
   <section id="services" class="py-16 bg-primaryLight">
@@ -225,12 +275,12 @@
                 <span class="text-primaryDark">Social Media Branding Kit</span>
               </li>
             </ul>
-            <div class="mt-8 ">
-              <a href="#contact" class="text-primary font-medium hover:text-primaryDark inline-flex items-center bg-secondaryLight px-4 py-2 rounded-md">
+            <!-- <div class="mt-8 ">
+              <a href="coming soon.html" class="text-primary font-medium hover:text-primaryDark inline-flex items-center bg-secondaryLight px-4 py-2 rounded-md">
                 Get Branding Help
                 <i class="fas fa-arrow-right ml-2"></i>
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -266,12 +316,12 @@
                 <span class="text-primaryDark">Ongoing Hosting & Technical Support</span>
               </li>
             </ul>
-            <div class="mt-8">
-              <a href="#contact" class="text-primary font-medium hover:text-primaryDark inline-flex items-center">
+            <!-- <div class="mt-8">
+              <a href="coming soon.html" class="text-primary font-medium hover:text-primaryDark inline-flex items-center">
                 Get a Website Quote
                 <i class="fas fa-arrow-right ml-2"></i>
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -307,15 +357,23 @@
                 <span class="text-primaryDark">Industry-Specific Licensing</span>
               </li>
             </ul>
-            <div class="mt-8">
-              <a href="#contact" class="text-primary font-medium hover:text-primaryDark inline-flex items-center">
+            <!-- <div class="mt-8">
+              <a href="coming soon.html" class="text-primary font-medium hover:text-primaryDark inline-flex items-center">
                 Get Compliance Help
                 <i class="fas fa-arrow-right ml-2"></i>
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
+<!-- 
+        <div class="mt-12 text-center">
+            <a href="ServicesPage.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
+            Request a Service
+            <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div> -->
+
     </div>
   </section>
 
@@ -324,24 +382,25 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 gap-8 md:grid-cols-4 text-center">
         <div class="p-6">
-          <div class="text-4xl font-bold mb-2" data-count="150">150+</div>
+          <div class="text-4xl font-bold mb-2" data-count="38">38</div>
           <p class="text-primaryLight uppercase text-sm tracking-wider">Projects Completed</p>
         </div>
         <div class="p-6">
-          <div class="text-4xl font-bold mb-2" data-count="95">95%</div>
+          <div class="text-4xl font-bold mb-2" data-count="87">87%</div>
           <p class="text-primaryLight uppercase text-sm tracking-wider">Client Retention</p>
         </div>
         <div class="p-6">
-          <div class="text-4xl font-bold mb-2" data-count="12">12+</div>
+          <div class="text-4xl font-bold mb-2" data-count="7">7</div>
           <p class="text-primaryLight uppercase text-sm tracking-wider">Years Experience</p>
         </div>
         <div class="p-6">
-          <div class="text-4xl font-bold mb-2" data-count="300">300+</div>
+          <div class="text-4xl font-bold mb-2" data-count="52">52</div>
           <p class="text-primaryLight uppercase text-sm tracking-wider">Sites Optimized</p>
         </div>
       </div>
     </div>
   </section>
+  
 
   <!-- Process Section -->
   <section id="process" class="py-16 bg-white">
@@ -359,7 +418,7 @@
       <div class="mt-12">
         <div class="relative">
           <!-- Timeline line -->
-          <div class="hidden md:block absolute top-0 left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
+          <div class="hidden md:block absolute top-0 left-1/2 h-full w-0.5 bg-gray-500 transform -translate-x-1/2"></div>
           
           <!-- Step 1 -->
           <div class="relative mb-16 md:flex md:items-center md:justify-between">
@@ -485,107 +544,100 @@
           Our Recent Work
         </h3>
         <p class="mt-4 max-w-2xl text-xl text-neutral-gray mx-auto">
-          See how we've helped businesses like yours succeed.
+          Explore how we've helped businesses grow through tailored digital solutions.
         </p>
       </div>
-
+  
       <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Portfolio Item 1 -->
+        
+        <!-- Project 1 -->
         <div class="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
           <div class="relative h-64 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="Mzansi Threads e-commerce site" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80" alt="Mzansi Threads e-commerce site" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-primaryDark via-transparent to-transparent opacity-70"></div>
             <div class="absolute bottom-0 left-0 p-6">
               <h3 class="text-xl font-bold text-white">Mzansi Threads</h3>
-              <p class="mt-1 text-primaryLight">E-commerce Fashion Store</p>
+              <p class="mt-1 text-primaryLight">Online Fashion Store</p>
             </div>
           </div>
           <div class="p-6">
             <div class="flex justify-between items-start">
               <div>
-                <p class="text-sm text-neutral-gray">E-commerce Solution</p>
-                <p class="mt-2 text-sm text-primaryDark">Complete online store with payment integration and inventory management</p>
+                <p class="text-sm text-neutral-gray">E-commerce Development</p>
+                <p class="mt-2 text-sm text-primaryDark">Built a scalable online store with secure payments and stock management.</p>
               </div>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                Live
-              </span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Live</span>
             </div>
             <div class="mt-6">
               <a href="#" class="text-sm font-medium text-primary hover:text-primaryDark inline-flex items-center">
-                View Case Study
-                <i class="fas fa-arrow-right ml-2"></i>
+                View Case Study <i class="fas fa-arrow-right ml-2"></i>
               </a>
             </div>
           </div>
         </div>
-
-        <!-- Portfolio Item 2 -->
+  
+        <!-- Project 2 -->
         <div class="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
           <div class="relative h-64 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="Delta Holdings corporate branding" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Delta Holdings branding" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-primaryDark via-transparent to-transparent opacity-70"></div>
             <div class="absolute bottom-0 left-0 p-6">
               <h3 class="text-xl font-bold text-white">Delta Holdings</h3>
-              <p class="mt-1 text-primaryLight">Corporate Brand Identity</p>
+              <p class="mt-1 text-primaryLight">Corporate Identity Design</p>
             </div>
           </div>
           <div class="p-6">
             <div class="flex justify-between items-start">
               <div>
-                <p class="text-sm text-neutral-gray">Branding Package</p>
-                <p class="mt-2 text-sm text-primaryDark">Complete corporate identity including logo, stationery and brand guidelines</p>
+                <p class="text-sm text-neutral-gray">Branding & Design</p>
+                <p class="mt-2 text-sm text-primaryDark">Developed full brand identity with logo, stationery, and brand guidelines.</p>
               </div>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                Completed
-              </span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Completed</span>
             </div>
             <div class="mt-6">
               <a href="#" class="text-sm font-medium text-primary hover:text-primaryDark inline-flex items-center">
-                View Case Study
-                <i class="fas fa-arrow-right ml-2"></i>
+                View Case Study <i class="fas fa-arrow-right ml-2"></i>
               </a>
             </div>
           </div>
         </div>
-
-        <!-- Portfolio Item 3 -->
+  
+        <!-- Project 3 -->
         <div class="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
           <div class="relative h-64 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="Mozela Travel booking platform" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Mozela Travel platform" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-primaryDark via-transparent to-transparent opacity-70"></div>
             <div class="absolute bottom-0 left-0 p-6">
               <h3 class="text-xl font-bold text-white">Mozela Travel</h3>
-              <p class="mt-1 text-primaryLight">Travel Booking Platform</p>
+              <p class="mt-1 text-primaryLight">Booking Platform</p>
             </div>
           </div>
           <div class="p-6">
             <div class="flex justify-between items-start">
               <div>
                 <p class="text-sm text-neutral-gray">Web Application</p>
-                <p class="mt-2 text-sm text-primaryDark">Custom booking system with payment processing and admin dashboard</p>
+                <p class="mt-2 text-sm text-primaryDark">Custom travel booking solution with integrated payments and admin portal.</p>
               </div>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                Live
-              </span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Live</span>
             </div>
             <div class="mt-6">
               <a href="#" class="text-sm font-medium text-primary hover:text-primaryDark inline-flex items-center">
-                View Case Study
-                <i class="fas fa-arrow-right ml-2"></i>
+                View Case Study <i class="fas fa-arrow-right ml-2"></i>
               </a>
             </div>
           </div>
         </div>
       </div>
-
+  
       <div class="mt-12 text-center">
-        <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
+        <a href="porfolio.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
           View Full Portfolio
           <i class="fas fa-arrow-right ml-2"></i>
         </a>
       </div>
     </div>
   </section>
+  
 
   <!-- Testimonials Section -->
   <section class="py-16 bg-primary text-white">
@@ -596,7 +648,7 @@
           What Our Clients Say
         </h3>
       </div>
-
+  
       <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
         <!-- Testimonial 1 -->
         <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
@@ -606,7 +658,7 @@
             </div>
             <div>
               <h4 class="font-bold">Thandi Nkosi</h4>
-              <p class="text-sm text-primaryLight">Owner, Mzansi Threads</p>
+              <p class="text-sm text-primaryLight">Founder, Mzansi Threads</p>
             </div>
           </div>
           <div class="flex mb-2">
@@ -617,10 +669,10 @@
             <i class="fas fa-star text-accent"></i>
           </div>
           <p class="text-primaryLight">
-            "Inkwazi Digital transformed our online presence completely. Our e-commerce site has seen a 300% increase in sales since launch. Their team understood our vision perfectly."
+            "Inkwazi Digital revamped our website and introduced a seamless online store. Within three months, our sales tripled, and our brand now stands out nationally."
           </p>
         </div>
-
+  
         <!-- Testimonial 2 -->
         <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
           <div class="flex items-center mb-4">
@@ -640,10 +692,10 @@
             <i class="fas fa-star text-accent"></i>
           </div>
           <p class="text-primaryLight">
-            "The branding package exceeded our expectations. We now have a cohesive, professional identity that sets us apart in our industry. Highly recommended!"
+            "The rebranding strategy and corporate website delivered by Inkwazi were spot on. We now attract more investors and partners thanks to their professional touch."
           </p>
         </div>
-
+  
         <!-- Testimonial 3 -->
         <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
           <div class="flex items-center mb-4">
@@ -663,12 +715,13 @@
             <i class="fas fa-star text-accent"></i>
           </div>
           <p class="text-primaryLight">
-            "From compliance to website development, Inkwazi handled everything seamlessly. Their local expertise saved us countless hours of frustration with regulations."
+            "Their team helped us navigate the tourism compliance process and built a stunning booking platform. We’ve grown bookings by 200% this year alone."
           </p>
         </div>
       </div>
     </div>
   </section>
+  
 
   <!-- Pricing Section -->
   <section id="pricing" class="py-16 bg-white">
@@ -966,7 +1019,7 @@
                 <i class="fas fa-map-marker-alt text-white"></i>
               </div>
               <div class="ml-4">
-                <h4 class="text-lg font-medium text-primaryDark">Our Office</h4>
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Our Office</h4> -->
                 <p class="mt-1 text-neutral-gray">123 Business Park, Sandton<br>Johannesburg, 2196</p>
               </div>
             </div>
@@ -976,7 +1029,7 @@
                 <i class="fas fa-phone-alt text-white"></i>
               </div>
               <div class="ml-4">
-                <h4 class="text-lg font-medium text-primaryDark">Phone</h4>
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Phone</h4> -->
                 <p class="mt-1 text-neutral-gray">+27 11 123 4567<br>Mon-Fri, 8am-5pm</p>
               </div>
             </div>
@@ -986,7 +1039,7 @@
                 <i class="fas fa-envelope text-white"></i>
               </div>
               <div class="ml-4">
-                <h4 class="text-lg font-medium text-primaryDark">Email</h4>
+                <!-- <h4 class="text-lg font-medium text-primaryDark">Email</h4> -->
                 <p class="mt-1 text-neutral-gray">hello@inkwazi.digital<br>We respond within 24 hours</p>
               </div>
             </div>
@@ -994,7 +1047,7 @@
 
           <div class="mt-12">
             <h4 class="text-lg font-medium text-primaryDark">Follow Us</h4>
-            <div class="mt-4 flex space-x-6">
+            <div class="mt-4 flex space-x-8">
               <a href="#" class="text-neutral-gray hover:text-primary transition duration-150">
                 <i class="fab fa-facebook-f text-xl"></i>
               </a>
@@ -1058,44 +1111,37 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer pt-16 pb-8 bg-gray-800">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<footer class="pt-16 pb-8 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <!-- Brand & Social -->
             <div>
-                <img src="images/logo_inkwazi.webp" alt="Inkwazi Digital Logo" class="h-20 w-auto mb-6">
-                <p class="text-neutral-light mb-6">
+                <img src="images/logo_inkwazi.webp" alt="Inkwazi Digital Logo" class="h-16 w-auto mb-6">
+                <p class="text-primaryLight mb-6">
                     Architecting digital success through strategic marketing solutions designed for sustainable growth.
                 </p>
                 <div class="flex space-x-4">
-                    <a href="#" class="social-icon text-white"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon text-white"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon text-white"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div>
-                <h4 class="text-white font-bold text-lg mb-6">Services</h4>
-                <ul class="space-y-3">
-                    <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">SEO Services</a></li>
-                    <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">PPC Advertising</a></li>
-                    <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Social Media Marketing</a></li>
-                    <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Web Design & Development</a></li>
-                    <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Content Marketing</a></li>
-                </ul>
-            </div>
+            <!-- Company Links -->
             <div>
                 <h4 class="text-white font-bold text-lg mb-6">Company</h4>
                 <ul class="space-y-3">
-                    <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">About Us</a></li>
-                    <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Our Process</a></li>
-                    <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Case Studies</a></li>
-                    <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Blog</a></li>
-                    <li><a href="#" class="text-neutral-light hover:text-white transition duration-300">Contact Us</a></li>
+                    <li><a href="#about" class="text-primaryLight hover:text-accent transition">About Us</a></li>
+                    <li><a href="#process" class="text-primaryLight hover:text-accent transition">Our Process</a></li>
+                    <li><a href="#portfolio" class="text-primaryLight hover:text-accent transition">Case Studies</a></li>
+                    <li><a href="#services" class="text-primaryLight hover:text-accent transition">Services</a></li>
+                    <li><a href="#contact" class="text-primaryLight hover:text-accent transition">Contact Us</a></li>
                 </ul>
             </div>
+            <!-- Contact Info -->
             <div>
                 <h4 class="text-white font-bold text-lg mb-6">Contact Info</h4>
-                <ul class="space-y-3 text-neutral-light">
+                <ul class="space-y-3 text-primaryLight">
                     <li class="flex items-start">
                         <i class="fas fa-map-marker-alt mt-1 mr-3 text-sm"></i>
                         <span>123 Business Ave, Johannesburg, South Africa</span>
@@ -1111,16 +1157,16 @@
                 </ul>
             </div>
         </div>
-        <div class="border-t border-primary-medium pt-8">
+        <div class="border-t border-white pt-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-neutral-light text-sm mb-4 md:mb-0">
+                <p class="text-primaryLight text-sm mb-4 md:mb-0">
                     &copy; 2023 Inkwazi Digital. All rights reserved.
                 </p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-neutral-light hover:text-white text-sm transition duration-300">Privacy Policy</a>
-                    <a href="#" class="text-neutral-light hover:text-white text-sm transition duration-300">Terms of Service</a>
-                    <a href="#" class="text-neutral-light hover:text-white text-sm transition duration-300">Sitemap</a>
-                </div>
+                <!-- <div class="flex space-x-6">
+                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Terms of Service</a>
+                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Sitemap</a>
+                </div> -->
             </div>
         </div>
     </div>
