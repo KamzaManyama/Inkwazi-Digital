@@ -1,1231 +1,398 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inkwazi Digital — Complete Branding, Web & Compliance Solutions</title>
-  <meta name="description" content="South Africa's premier business branding, web design, and compliance services. Get everything you need to launch and grow your business successfully.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="images/WhatsApp Image 2025-06-09 at 11.19.27.jpeg">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#1e3a8a',         // Deep Blue
-            primaryDark: '#374151',     // Charcoal
-            secondary: '#f59e0b',       // Gold
-            accent: '#fbbf24',          // Light Gold
-            primaryLight: '#f8fafc',    // Light Gray
-            neutral: {
-              light: '#f8fafc',         // Light Gray
-              gray: '#64748b',          // Dark Gray
-              dark: '#374151'           // Charcoal
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inkwazi Digital | Business Compliance & Digital Solutions</title>
+  <meta name="description" content="Inkwazi Digital helps businesses stay organised, compliant and ready to grow. CIPC, SARS, labour and CSD support, plus websites and digital tools.">
+  <link rel="icon" href="assets/black_logo-trans-300x241.png.bv_resized_mobile.png.bv.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="bg-primaryLight text-primaryDark font-sans antialiased">
+<body>
 
-  <!-- Navigation -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
-            <div class="flex justify-start lg:w-0 lg:flex-1">
-                <a href="#" class="flex items-center">
-                    <img src="images/WhatsApp Image 2025-06-09 at 11.19.27.jpeg" alt="Inkwazi Digital Logo" class="h-20 w-auto">
-                </a>
-            </div>
-            
-            <!-- Mobile menu button -->
-            <div class="-mr-2 -my-2 md:hidden">
-                <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary focus:outline-none">
-                    <span class="sr-only">Open menu</span>
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-            
-            <!-- Desktop navigation -->
-            <nav class="hidden md:flex space-x-7">
-                <a href="#Home" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Home</a>
-                <a href="#about" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">About</a>
-                <a href="#services" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Services</a>
-                <a href="#process" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Process</a>
-                <a href="#portfolio" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Portfolio</a>
-                <a href="#pricing" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Pricing</a>
-                <a href="#contact" class="text-base font-medium text-neutral-gray hover:text-primary transition duration-150">Contact</a>
-            </nav>
-            
-            <!-- Desktop CTA button -->
-            <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                <a href="#contact" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary hover:bg-primaryDark transition duration-150">
-                    Get Started
-                </a>
-            </div>
-        </div>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#top" class="logo" aria-label="Inkwazi Digital home">
+        <img src="assets/black_logo-trans-300x241.png.bv_resized_mobile.png.bv.webp" alt="Inkwazi Digital logo" width="65" height="52">
+      </a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#digital">Projects</a>
+        <a href="#contact" class="btn-nav">Contact us</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    
-    <!-- Mobile menu (hidden by default) -->
-    <div class="md:hidden hidden origin-top absolute top-full left-0 right-0 bg-white shadow-lg" id="mobile-menu">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#Home" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">Home</a>
-            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">About</a>
-            <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">Services</a>
-            <a href="#process" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">Process</a>
-            <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">Portfolio</a>
-            <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">Pricing</a>
-            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-gray hover:text-primary hover:bg-gray-50">Contact</a>
-            <a href="#contact" class="block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-primaryDark text-center">
-                Get Started
-            </a>
-        </div>
-    </div>
-</header>
+  </header>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', function() {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            
-            if (isHidden) {
-                // Show menu
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('animate-fadeInDown');
-                // Change icon to 'X'
-                mobileMenuButton.innerHTML = '<span class="sr-only">Close menu</span><i class="fas fa-times text-xl"></i>';
-            } else {
-                // Hide menu
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('animate-fadeInDown');
-                // Change icon back to bars
-                mobileMenuButton.innerHTML = '<span class="sr-only">Open menu</span><i class="fas fa-bars text-xl"></i>';
-            }
-        });
-        
-        // Close menu when clicking on a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-                mobileMenuButton.innerHTML = '<span class="sr-only">Open menu</span><i class="fas fa-bars text-xl"></i>';
-            });
-        });
-    });
-</script>
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-img" role="img" aria-label="Modern building against a bright sky"></div>
 
-<style>
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    .animate-fadeInDown {
-        animation: fadeInDown 0.3s ease-out;
-    }
-</style>
-
-  <!-- Hero Section -->
-  <section id="Home" class="relative bg-gradient-to-r from-primary to-primaryDark text-white overflow-hidden min-h-[85vh] flex items-center">
-    <div class="absolute inset-0 z-0">
-        <img class="w-full h-full object-cover opacity-30" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="Business team working">
-        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-    </div>
-    <div class="max-w-8xl  lg:px-8 relative z-10 py-16 px-4 sm:px-6 lg:px-8 mx-auto"> 
-        <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-            <div class="text-center lg:text-left">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                    <span class="block">Empowering Your Business</span> 
-                    <span class="block text-accent mt-2">From Idea to Identity</span>
-                </h1>
-                <p class="mt-6 text-lg md:text-xl text-primaryLight max-w-lg mx-auto lg:mx-0">
-                    We craft standout brands, design impactful websites, and handle business compliance so you can focus on growth and success.
-                </p>
-                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 transition duration-150">
-                        Get Your Free Quote
-                    </a>
-                    <a href="#services" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-secondary hover:bg-opacity-90 transition duration-150">
-                        Explore Services
-                    </a>
-                </div>
-            </div>
-            <!-- If you want to add an image or other content on the right side later -->
-            <div class="hidden lg:block"></div>
-        </div>
-    </div>
-</section>
-
-
-  <!-- About Section -->
-  <section id="about" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-        <div class="mb-12 lg:mb-0">
-          <h2 class="text-base text-primary font-semibold tracking-wide uppercase">About Us</h2>
-          <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
-            Empowering South African Entrepreneurs
-          </h3>
-          <p class="mt-4 text-lg text-neutral-gray">
-            Inkwazi Digital is a brand strategy and online marketing consultancy based in Phumula, KwaNdebele. Since 2018, we've been dedicated to helping emerging businesses in South Africa establish a strong digital presence and succeed in a competitive marketplace.
-          </p>
-  
-          <div class="mt-8 space-y-6">
-            <div class="flex items-start">
-              <div class="flex-shrink-0 bg-primary rounded-md p-2">
-                <i class="fas fa-briefcase text-white text-lg"></i>
-              </div>
-              <div class="ml-4">
-                <!-- <h4 class="text-lg font-medium text-primaryDark">Comprehensive Services</h4> -->
-                <p class="mt-1 text-neutral-gray text-sl">We offer graphic design, digital marketing, website design, and business administration support.</p>
-              </div>
-            </div>
-  
-            <div class="flex items-start">
-              <div class="flex-shrink-0 bg-primary rounded-md p-2">
-                <i class="fas fa-handshake text-white text-lg"></i>
-              </div>
-              <div class="ml-4">
-                <!-- <h4 class="text-lg font-medium text-primaryDark">Partnering for Growth</h4> -->
-                <p class="mt-1 text-neutral-gray">We collaborate with clients to build functional websites and visually striking brands that resonate with their audience.</p>
-              </div>
-            </div>
-          </div>
-  
-          <div class="mt-10">
-            <a href="about-page.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
-              Learn More About Us
-              <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-        </div>
-  
-        <div class="relative">
-          <img class="w-full rounded-lg shadow-xl" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Inkwazi Digital team">
-          <div class="absolute -bottom-6 -right-6 bg-accent p-6 rounded-lg shadow-lg hidden lg:block">
-            <div class="text-center">
-              <p class="text-3xl font-bold text-primaryDark">38+</p>
-              <p class="text-primaryDark font-medium">Projects Delivered</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-
-  <!-- Services Section -->
-  <section id="services" class="py-16 bg-primaryLight">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Services</h2>
-        <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
-          Everything Your Business Needs
-        </h3>
-        <p class="mt-4 max-w-2xl text-xl text-neutral-gray mx-auto">
-          Comprehensive solutions from branding to compliance - all under one roof.
-        </p>
+      <div class="hero-copy">
+        <h1><span><b>Inkwazi</b> Digital</span><span>Business <b>Compliance</b></span></h1>
+        <div class="hero-meta"><span class="num">01</span><strong>Compliance made clearer.</strong></div>
+        <p class="hero-lead">We help entrepreneurs and businesses stay organised, compliant and ready to grow. From CIPC, SARS, labour and CSD support to websites and digital tools, we make important business processes clearer and easier to manage, so you can focus on running your business.</p>
       </div>
 
-      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Branding Service -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-          <div class="bg-primary p-6">
-            <div class="flex items-center">
-              <div class="bg-white rounded-lg p-3 mr-4">
-                <i class="fas fa-paint-brush text-primary text-xl"></i>
-              </div>
-              <h3 class="text-xl font-bold text-white">Business Branding</h3>
-            </div>
-          </div>
-          <div class="p-6">
-            <p class="text-neutral-gray">
-              Create a powerful, memorable identity that stands out in the market and resonates with your target audience.
-            </p>
-            <ul class="mt-6 space-y-3">
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Logo Design & Visual Identity</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Comprehensive Brand Style Guide</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Business Stationery Suite</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Social Media Branding Kit</span>
-              </li>
-            </ul>
-            <!-- <div class="mt-8 ">
-              <a href="coming soon.html" class="text-primary font-medium hover:text-primaryDark inline-flex items-center bg-secondaryLight px-4 py-2 rounded-md">
-                Get Branding Help
-                <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div> -->
-          </div>
-        </div>
-
-        <!-- Web Design Service -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-          <div class="bg-primary p-6">
-            <div class="flex items-center">
-              <div class="bg-white rounded-lg p-3 mr-4">
-                <i class="fas fa-laptop-code text-primary text-xl"></i>
-              </div>
-              <h3 class="text-xl font-bold text-white">Web Design & Development</h3>
-            </div>
-          </div>
-          <div class="p-6">
-            <p class="text-neutral-gray">
-              Professional websites designed to attract, engage, and convert your customers across all devices.
-            </p>
-            <ul class="mt-6 space-y-3">
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Fully Responsive Mobile Design</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">E-commerce & Payment Solutions</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">SEO Optimization</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Ongoing Hosting & Technical Support</span>
-              </li>
-            </ul>
-            <!-- <div class="mt-8">
-              <a href="coming soon.html" class="text-primary font-medium hover:text-primaryDark inline-flex items-center">
-                Get a Website Quote
-                <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div> -->
-          </div>
-        </div>
-
-        <!-- Compliance Service -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-          <div class="bg-primary p-6">
-            <div class="flex items-center">
-              <div class="bg-white rounded-lg p-3 mr-4">
-                <i class="fas fa-file-contract text-primary text-xl"></i>
-              </div>
-              <h3 class="text-xl font-bold text-white">Business Compliance</h3>
-            </div>
-          </div>
-          <div class="p-6">
-            <p class="text-neutral-gray">
-              Handle all the legal requirements so you can focus on growing your business with peace of mind.
-            </p>
-            <ul class="mt-6 space-y-3">
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Company Registration (Pty Ltd, CC)</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Tax Compliance (VAT, PAYE, UIF)</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">BEE Certification</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Industry-Specific Licensing</span>
-              </li>
-            </ul>
-            <!-- <div class="mt-8">
-              <a href="coming soon.html" class="text-primary font-medium hover:text-primaryDark inline-flex items-center">
-                Get Compliance Help
-                <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div> -->
-          </div>
-        </div>
-      </div>
-<!-- 
-        <div class="mt-12 text-center">
-            <a href="ServicesPage.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
-            Request a Service
-            <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-        </div> -->
-
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="py-16 bg-primary text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 gap-8 md:grid-cols-4 text-center">
-        <div class="p-6">
-          <div class="text-4xl font-bold mb-2" data-count="38">38</div>
-          <p class="text-primaryLight uppercase text-sm tracking-wider">Projects Completed</p>
-        </div>
-        <div class="p-6">
-          <div class="text-4xl font-bold mb-2" data-count="87">87%</div>
-          <p class="text-primaryLight uppercase text-sm tracking-wider">Client Retention</p>
-        </div>
-        <div class="p-6">
-          <div class="text-4xl font-bold mb-2" data-count="7">7</div>
-          <p class="text-primaryLight uppercase text-sm tracking-wider">Years Experience</p>
-        </div>
-        <div class="p-6">
-          <div class="text-4xl font-bold mb-2" data-count="52">52</div>
-          <p class="text-primaryLight uppercase text-sm tracking-wider">Sites Optimized</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-
-  <!-- Process Section -->
-  <section id="process" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Our Process</h2>
-        <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
-          Simple, Transparent, Effective
-        </h3>
-        <p class="mt-4 max-w-2xl text-xl text-neutral-gray mx-auto">
-          We've streamlined our process to deliver maximum value with minimum hassle.
-        </p>
-      </div>
-
-      <div class="mt-12">
-        <div class="relative">
-          <!-- Timeline line -->
-          <div class="hidden md:block absolute top-0 left-1/2 h-full w-0.5 bg-gray-500 transform -translate-x-1/2"></div>
-          
-          <!-- Step 1 -->
-          <div class="relative mb-16 md:flex md:items-center md:justify-between">
-            <div class="md:w-5/12 md:pr-8 md:text-right">
-              <h3 class="text-xl font-semibold text-primary">Discovery</h3>
-              <p class="mt-2 text-neutral-gray">
-                We start by understanding your business, goals, and vision through a detailed consultation.
-              </p>
-            </div>
-            <div class="mt-6 md:mt-0 md:w-2/12 md:flex md:justify-center">
-              <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-lg border-4 border-white">
-                <span class="text-2xl font-bold">1</span>
-              </div>
-            </div>
-            <div class="mt-6 md:mt-0 md:w-5/12 md:pl-8">
-              <div class="bg-primaryLight p-6 rounded-lg">
-                <ul class="space-y-3 text-primaryDark">
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Business goals analysis</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Target audience research</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Competitor review</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Requirements documentation</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="relative mb-16 md:flex md:items-center md:justify-between md:flex-row-reverse">
-            <div class="md:w-5/12 md:pl-8">
-              <h3 class="text-xl font-semibold text-primary">Design & Development</h3>
-              <p class="mt-2 text-neutral-gray">
-                Our team creates tailored solutions based on your specific needs and feedback.
-              </p>
-            </div>
-            <div class="mt-6 md:mt-0 md:w-2/12 md:flex md:justify-center">
-              <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-lg border-4 border-white">
-                <span class="text-2xl font-bold">2</span>
-              </div>
-            </div>
-            <div class="mt-6 md:mt-0 md:w-5/12 md:pr-8 md:text-right">
-              <div class="bg-primaryLight p-6 rounded-lg">
-                <ul class="space-y-3 text-primaryDark">
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Initial concepts presentation</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Iterative refinement</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Technical implementation</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Quality assurance testing</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="relative md:flex md:items-center md:justify-between">
-            <div class="md:w-5/12 md:pr-8 md:text-right">
-              <h3 class="text-xl font-semibold text-primary">Launch & Support</h3>
-              <p class="mt-2 text-neutral-gray">
-                We ensure a smooth launch and provide ongoing support for your continued success.
-              </p>
-            </div>
-            <div class="mt-6 md:mt-0 md:w-2/12 md:flex md:justify-center">
-              <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-lg border-4 border-white">
-                <span class="text-2xl font-bold">3</span>
-              </div>
-            </div>
-            <div class="mt-6 md:mt-0 md:w-5/12 md:pl-8">
-              <div class="bg-primaryLight p-6 rounded-lg">
-                <ul class="space-y-3 text-primaryDark">
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Final deployment</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Training & documentation</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Performance monitoring</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                    <span>Ongoing maintenance</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="py-16 bg-primaryLight">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Portfolio</h2>
-        <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
-          Our Recent Work
-        </h3>
-        <p class="mt-4 max-w-2xl text-xl text-neutral-gray mx-auto">
-          Explore how we've helped businesses grow through tailored digital solutions.
-        </p>
-      </div>
-  
-      <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        
-        <!-- Project 1 -->
-        <div class="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
-          <div class="relative h-64 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80" alt="Mzansi Threads e-commerce site" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-            <div class="absolute inset-0 bg-gradient-to-t from-primaryDark via-transparent to-transparent opacity-70"></div>
-            <div class="absolute bottom-0 left-0 p-6">
-              <h3 class="text-xl font-bold text-white">Mzansi Threads</h3>
-              <p class="mt-1 text-primaryLight">Online Fashion Store</p>
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start">
-              <div>
-                <p class="text-sm text-neutral-gray">E-commerce Development</p>
-                <p class="mt-2 text-sm text-primaryDark">Built a scalable online store with secure payments and stock management.</p>
-              </div>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Live</span>
-            </div>
-            <div class="mt-6">
-              <a href="#" class="text-sm font-medium text-primary hover:text-primaryDark inline-flex items-center">
-                View Case Study <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Project 2 -->
-        <div class="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
-          <div class="relative h-64 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Delta Holdings branding" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-            <div class="absolute inset-0 bg-gradient-to-t from-primaryDark via-transparent to-transparent opacity-70"></div>
-            <div class="absolute bottom-0 left-0 p-6">
-              <h3 class="text-xl font-bold text-white">Delta Holdings</h3>
-              <p class="mt-1 text-primaryLight">Corporate Identity Design</p>
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start">
-              <div>
-                <p class="text-sm text-neutral-gray">Branding & Design</p>
-                <p class="mt-2 text-sm text-primaryDark">Developed full brand identity with logo, stationery, and brand guidelines.</p>
-              </div>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Completed</span>
-            </div>
-            <div class="mt-6">
-              <a href="#" class="text-sm font-medium text-primary hover:text-primaryDark inline-flex items-center">
-                View Case Study <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Project 3 -->
-        <div class="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
-          <div class="relative h-64 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Mozela Travel platform" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-            <div class="absolute inset-0 bg-gradient-to-t from-primaryDark via-transparent to-transparent opacity-70"></div>
-            <div class="absolute bottom-0 left-0 p-6">
-              <h3 class="text-xl font-bold text-white">Mozela Travel</h3>
-              <p class="mt-1 text-primaryLight">Booking Platform</p>
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start">
-              <div>
-                <p class="text-sm text-neutral-gray">Web Application</p>
-                <p class="mt-2 text-sm text-primaryDark">Custom travel booking solution with integrated payments and admin portal.</p>
-              </div>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Live</span>
-            </div>
-            <div class="mt-6">
-              <a href="#" class="text-sm font-medium text-primary hover:text-primaryDark inline-flex items-center">
-                View Case Study <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <div class="mt-12 text-center">
-        <a href="porfolio.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
-          View Full Portfolio
-          <i class="fas fa-arrow-right ml-2"></i>
+      <div class="hero-rail">
+        <a href="https://wa.me/27665955511" class="rail-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp: 066 595 5511">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 4.9 5-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.9c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.7-.3z"/></svg>
+          <span class="vtext">WhatsApp <b>066 595 5511</b></span>
+        </a>
+        <div class="dashes" aria-hidden="true"><i></i><i></i></div>
+        <a href="#about" class="rail-scroll" aria-label="Scroll to the next section">
+          <span class="vtext">scroll</span>
+          <svg viewBox="0 0 12 40" aria-hidden="true"><path d="M6 0v38M1 33l5 5 5-5"/></svg>
         </a>
       </div>
-    </div>
-  </section>
-  
 
-  <!-- Testimonials Section -->
-  <section class="py-16 bg-primary text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-base text-accent font-semibold tracking-wide uppercase">Client Success Stories</h2>
-        <h3 class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
-          What Our Clients Say
-        </h3>
-      </div>
-  
-      <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-        <!-- Testimonial 1 -->
-        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-accent">
-              <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Thandi Nkosi" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="font-bold">Thandi Nkosi</h4>
-              <p class="text-sm text-primaryLight">Founder, Mzansi Threads</p>
-            </div>
-          </div>
-          <div class="flex mb-2">
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-          </div>
-          <p class="text-primaryLight">
-            "Inkwazi Digital revamped our website and introduced a seamless online store. Within three months, our sales tripled, and our brand now stands out nationally."
-          </p>
-        </div>
-  
-        <!-- Testimonial 2 -->
-        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-accent">
-              <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="James Khumalo" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="font-bold">James Khumalo</h4>
-              <p class="text-sm text-primaryLight">CEO, Delta Holdings</p>
-            </div>
-          </div>
-          <div class="flex mb-2">
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-          </div>
-          <p class="text-primaryLight">
-            "The rebranding strategy and corporate website delivered by Inkwazi were spot on. We now attract more investors and partners thanks to their professional touch."
-          </p>
-        </div>
-  
-        <!-- Testimonial 3 -->
-        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-accent">
-              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Nomsa Dlamini" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="font-bold">Nomsa Dlamini</h4>
-              <p class="text-sm text-primaryLight">Director, Mozela Travel</p>
-            </div>
-          </div>
-          <div class="flex mb-2">
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-            <i class="fas fa-star text-accent"></i>
-          </div>
-          <p class="text-primaryLight">
-            "Their team helped us navigate the tourism compliance process and built a stunning booking platform. We’ve grown bookings by 200% this year alone."
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
+      <span class="hero-dash" aria-hidden="true"></span>
 
-  <!-- Pricing Section -->
-  <section id="pricing" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Pricing</h2>
-        <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
-          Transparent Pricing Packages
-        </h3>
-        <p class="mt-4 max-w-2xl text-xl text-neutral-gray mx-auto">
-          Simple pricing for businesses of all sizes. Custom solutions available.
-        </p>
-      </div>
-
-      <div class="mt-12 grid gap-8 md:grid-cols-3">
-        <!-- Starter Package -->
-        <div class="bg-primaryLight rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-          <div class="p-6 bg-white border-b border-gray-200">
-            <h3 class="text-2xl font-bold text-primaryDark">Starter</h3>
-            <p class="mt-2 text-neutral-gray">Perfect for new businesses getting established</p>
-          </div>
-          <div class="p-6">
-            <div class="flex items-baseline">
-              <span class="text-4xl font-bold text-primaryDark">R8,999</span>
-              <span class="ml-1 text-lg font-medium text-neutral-gray">once off</span>
-            </div>
-            <ul class="mt-6 space-y-4">
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Basic Logo Design</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">5-Page Website</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Business Registration</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Basic Tax Compliance</span>
-              </li>
-              <li class="flex items-start text-neutral-gray">
-                <i class="fas fa-times mt-1 mr-3"></i>
-                <span>E-commerce Functionality</span>
-              </li>
-            </ul>
-            <div class="mt-8">
-              <a href="#contact" class="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
-                Choose Starter
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Professional Package -->
-        <div class="bg-primaryLight rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 border-2 border-accent">
-          <div class="p-6 bg-primary text-white">
-            <div class="flex justify-between items-start">
-              <div>
-                <h3 class="text-2xl font-bold">Professional</h3>
-                <p class="mt-2 text-primaryLight">Our most popular package for growing businesses</p>
-              </div>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent text-primaryDark">
-                Popular
-              </span>
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex items-baseline">
-              <span class="text-4xl font-bold text-primaryDark">R14,999</span>
-              <span class="ml-1 text-lg font-medium text-neutral-gray">once off</span>
-            </div>
-            <ul class="mt-6 space-y-4">
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Premium Logo & Branding</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">10-Page Website</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Basic E-commerce Setup</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Full Tax Compliance</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">6 Months Support</span>
-              </li>
-            </ul>
-            <div class="mt-8">
-              <a href="#contact" class="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
-                Choose Professional
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Enterprise Package -->
-        <div class="bg-primaryLight rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-          <div class="p-6 bg-white border-b border-gray-200">
-            <h3 class="text-2xl font-bold text-primaryDark">Enterprise</h3>
-            <p class="mt-2 text-neutral-gray">Complete solution for established businesses</p>
-          </div>
-          <div class="p-6">
-            <div class="flex items-baseline">
-              <span class="text-4xl font-bold text-primaryDark">R24,999</span>
-              <span class="ml-1 text-lg font-medium text-neutral-gray">once off</span>
-            </div>
-            <ul class="mt-6 space-y-4">
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Complete Brand Identity</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Custom Website + E-commerce</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Advanced SEO Setup</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">Full Compliance Package</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-accent mt-1 mr-3"></i>
-                <span class="text-primaryDark">12 Months Premium Support</span>
-              </li>
-            </ul>
-            <div class="mt-8">
-              <a href="#contact" class="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
-                Choose Enterprise
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div class="mt-12 text-center">
-        <p class="text-neutral-gray">Need something custom? We offer tailored solutions for unique business needs.</p>
-        <div class="mt-6">
-          <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-primary bg-white hover:bg-gray-50 border-primary transition duration-150">
-            Request Custom Quote
-            <i class="fas fa-arrow-right ml-2"></i>
+      <div class="hero-bar">
+        <small>Follow us</small>
+        <div class="hero-social" aria-label="Inkwazi Digital on social media">
+          <a href="https://facebook.com/inkwazidigital" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z"/></svg>
+          </a>
+          <a href="https://instagram.com/inkwazidigital" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm4.9-8.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM21 8.3c-.1-1.5-.4-2.8-1.5-3.8S17.2 3.1 15.7 3c-1.5-.1-5.9-.1-7.4 0-1.5.1-2.8.4-3.8 1.5S3.1 6.8 3 8.3c-.1 1.5-.1 5.9 0 7.4.1 1.5.4 2.8 1.5 3.8s2.3 1.4 3.8 1.5c1.5.1 5.9.1 7.4 0 1.5-.1 2.8-.4 3.8-1.5s1.4-2.3 1.5-3.8c.1-1.5.1-5.9 0-7.4zm-2 9.1a3 3 0 0 1-1.7 1.7c-1.2.5-3.9.4-5.3.4s-4.1.1-5.3-.4a3 3 0 0 1-1.7-1.7c-.5-1.2-.4-3.9-.4-5.3s-.1-4.1.4-5.3A3 3 0 0 1 6.7 5c1.2-.5 3.9-.4 5.3-.4s4.1-.1 5.3.4A3 3 0 0 1 19 6.7c.5 1.2.4 3.9.4 5.3s.1 4.1-.4 5.4z"/></svg>
+          </a>
+          <a href="https://x.com/inkwazidigital" target="_blank" rel="noopener" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg>
+          </a>
+          <a href="https://wa.me/27665955511" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 4.9 5-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.9c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.7-.3z"/></svg>
           </a>
         </div>
-      </div> -->
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="py-16 bg-primaryLight">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-base text-primary font-semibold tracking-wide uppercase">FAQ</h2>
-        <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
-          Frequently Asked Questions
-        </h3>
-        <p class="mt-4 max-w-2xl text-xl text-neutral-gray mx-auto">
-          Everything you need to know about working with us.
-        </p>
       </div>
 
-      <div class="mt-12 max-w-3xl mx-auto">
-        <div class="space-y-6">
-          <!-- FAQ Item 1 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
-              <h3 class="text-lg font-medium text-primaryDark">How long does a typical project take?</h3>
-              <i class="fas fa-chevron-down text-primary transition-transform duration-200"></i>
-            </button>
-            <div class="px-6 pb-6 hidden">
-              <p class="text-neutral-gray">
-                Project timelines vary based on scope, but most branding projects take 2-4 weeks, websites 4-8 weeks, and compliance services 1-3 weeks depending on government processing times. We'll provide a detailed timeline after our initial consultation.
-              </p>
-            </div>
-          </div>
+      <a href="#contact" class="hero-cta">Get in touch
+        <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </section>
 
-          <!-- FAQ Item 2 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
-              <h3 class="text-lg font-medium text-primaryDark">Do you offer ongoing support after launch?</h3>
-              <i class="fas fa-chevron-down text-primary transition-transform duration-200"></i>
-            </button>
-            <div class="px-6 pb-6 hidden">
-              <p class="text-neutral-gray">
-                Yes! All our packages include some level of post-launch support. We also offer monthly retainer options for businesses needing regular updates, maintenance, and technical support. Our goal is to build long-term relationships with our clients.
-              </p>
-            </div>
+    <!-- 01 Who We Are -->
+    <section id="about" style="padding-bottom:0" data-rail="who we are">
+      <div class="container">
+        <div class="about-grid reveal">
+          <div class="about-media">
+            <img src="assets/founder/WhatsApp Image 2026-10-21 at 18.38.46.jpeg" alt="Business owner and consultant celebrating at a desk" loading="lazy" width="1200" height="800">
           </div>
-
-          <!-- FAQ Item 3 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
-              <h3 class="text-lg font-medium text-primaryDark">What payment methods do you accept?</h3>
-              <i class="fas fa-chevron-down text-primary transition-transform duration-200"></i>
-            </button>
-            <div class="px-6 pb-6 hidden">
-              <p class="text-neutral-gray">
-                We accept EFT/bank transfers (preferred), credit/debit cards via PayFast, and for larger projects, we can arrange payment plans. A 50% deposit is required to begin work, with the balance due upon completion.
-              </p>
-            </div>
+          <div class="about-intro">
+            <span class="section-label"><span class="num">01</span>Who we are</span>
+            <h2 class="section-title">Practical support for <b>business owners</b> and <b>entrepreneurs.</b></h2>
+            <p class="muted">Inkwazi Digital is a business compliance consultancy based in KwaMhlanga, South Africa. We support business owners and entrepreneurs with practical assistance across key compliance areas, including CIPC, SARS, labour-related matters and the Central Supplier Database (CSD).</p>
+            <a href="about.html" class="more-link">More about us <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
           </div>
+        </div>
+      </div>
 
-          <!-- FAQ Item 4 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
-              <h3 class="text-lg font-medium text-primaryDark">Can you help with domain registration and hosting?</h3>
-              <i class="fas fa-chevron-down text-primary transition-transform duration-200"></i>
-            </button>
-            <div class="px-6 pb-6 hidden">
-              <p class="text-neutral-gray">
-                Absolutely! We can handle all technical aspects including domain registration, hosting setup, email configuration, and SSL certificates. We offer competitive hosting packages optimized for South African audiences, with servers located in Johannesburg for faster load times.
-              </p>
+      <!-- Values banner -->
+      <div class="values-banner">
+        <div class="container">
+          <div class="values-inner reveal">
+            <!-- <span class="section-label">Our values</span> -->
+            <div class="values">
+            <div class="value">
+              <span class="value-num">01</span>
+              <h3>Clarity</h3>
+              <p>We explain processes in a straightforward, practical way.</p>
             </div>
-          </div>
-
-          <!-- FAQ Item 5 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
-              <h3 class="text-lg font-medium text-primaryDark">What makes your compliance services different?</h3>
-              <i class="fas fa-chevron-down text-primary transition-transform duration-200"></i>
-            </button>
-            <div class="px-6 pb-6 hidden">
-              <p class="text-neutral-gray">
-                Our team includes legal professionals specializing in South African business law. We don't just file paperwork - we ensure you understand all requirements and maintain compliance long-term. We also stay updated on regulatory changes that might affect your business.
-              </p>
+            <div class="value">
+              <span class="value-num">02</span>
+              <h3>Service</h3>
+              <p>We focus on understanding each client's needs.</p>
+            </div>
+            <div class="value">
+              <span class="value-num">03</span>
+              <h3>Practicality</h3>
+              <p>We aim for solutions clients can put to use.</p>
+            </div>
+            <div class="value">
+              <span class="value-num">04</span>
+              <h3>Progress</h3>
+              <p>We embrace digital tools that simplify work.</p>
+            </div>
             </div>
           </div>
         </div>
-
-        <!-- <div class="mt-12 text-center">
-          <p class="text-neutral-gray">Have more questions?</p>
-          <div class="mt-6">
-            <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primaryDark transition duration-150">
-              Contact Us
-              <i class="fas fa-envelope ml-2"></i>
-            </a>
-          </div>
-        </div> -->
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="relative bg-primary text-white overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img class="w-full h-full object-cover opacity-20" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="Team working together">
-      <div class="absolute inset-0 bg-primaryDark bg-opacity-70"></div>
-    </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16">
-      <div class="text-center">
-        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
-          Ready to transform your business?
-        </h2>
-        <p class="mt-4 max-w-2xl text-xl mx-auto">
-          Let's discuss how we can help you achieve your goals.
-        </p>
-        <!-- <div class="mt-8 flex justify-center">
-          <div class="inline-flex rounded-md shadow">
-            <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 transition duration-150">
-              Get Your Free Consultation
-              <i class="fas fa-arrow-right ml-3"></i>
-            </a>
-          </div>
-        </div> -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-16">
-        <div class="mb-12 lg:mb-0">
-          <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Contact Us</h2>
-          <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-primaryDark sm:text-4xl">
-            Let's Build Something Great
-          </h3>
-          <p class="mt-4 text-lg text-neutral-gray">
-            Whether you're ready to start a project or just have questions, we'd love to hear from you.
-          </p>
-          
-          <div class="mt-8 space-y-6">
-            <div class="flex items-start">
-              <div class="flex-shrink-0 bg-primary rounded-md p-3">
-                <i class="fas fa-map-marker-alt text-white"></i>
-              </div>
-              <div class="ml-4">
-                <!-- <h4 class="text-lg font-medium text-primaryDark">Our Office</h4> -->
-                <p class="mt-1 text-neutral-gray">123 Business Park, Sandton<br>Johannesburg, 2196</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start">
-              <div class="flex-shrink-0 bg-primary rounded-md p-3">
-                <i class="fas fa-phone-alt text-white"></i>
-              </div>
-              <div class="ml-4">
-                <!-- <h4 class="text-lg font-medium text-primaryDark">Phone</h4> -->
-                <p class="mt-1 text-neutral-gray">+27 11 123 4567<br>Mon-Fri, 8am-5pm</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start">
-              <div class="flex-shrink-0 bg-primary rounded-md p-3">
-                <i class="fas fa-envelope text-white"></i>
-              </div>
-              <div class="ml-4">
-                <!-- <h4 class="text-lg font-medium text-primaryDark">Email</h4> -->
-                <p class="mt-1 text-neutral-gray">hello@inkwazi.digital<br>We respond within 24 hours</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-12">
-            <h4 class="text-lg font-medium text-primaryDark">Follow Us</h4>
-            <div class="mt-4 flex space-x-8">
-              <a href="#" class="text-neutral-gray hover:text-primary transition duration-150">
-                <i class="fab fa-facebook-f text-xl"></i>
-              </a>
-              <a href="#" class="text-neutral-gray hover:text-primary transition duration-150">
-                <i class="fab fa-twitter text-xl"></i>
-              </a>
-              <a href="#" class="text-neutral-gray hover:text-primary transition duration-150">
-                <i class="fab fa-instagram text-xl"></i>
-              </a>
-              <a href="#" class="text-neutral-gray hover:text-primary transition duration-150">
-                <i class="fab fa-linkedin-in text-xl"></i>
-              </a>
-            </div>
+    <!-- 02 What We Do -->
+    <section id="services" class="services" data-rail="what we do">
+      <div class="container">
+        <div class="services-head reveal">
+          <div>
+            <span class="section-label"><span class="num">02</span>What we do</span>
+            <h2 class="section-title" style="margin-bottom:0"><b>Business compliance</b> support</h2>
           </div>
         </div>
-        
-        <div class="bg-primaryLight rounded-xl p-8 shadow-md">
-          <h3 class="text-xl font-bold text-primaryDark mb-6">Send Us a Message</h3>
-          <form class="space-y-6">
-            <div>
-              <label for="name" class="block text-sm font-medium text-primaryDark">Your Name</label>
-              <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary">
+
+        <div class="cards reveal">
+          <article class="card">
+            <span class="card-tag">01</span>
+            <svg class="card-icon" viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="30" rx="2"/><path d="M16 6v8M32 6v8M8 20h32M16 28h6M16 33h12"/></svg>
+            <h3>CIPC Support</h3>
+            <p>Assistance with company-related matters, including registration and company record or annual-return processes, where required.</p>
+          </article>
+          <article class="card">
+            <span class="card-tag">02</span>
+            <svg class="card-icon" viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="2"/><path d="M16 14h16M16 20h16M16 26h8M28 30l4 4 6-8"/></svg>
+            <h3>SARS Support</h3>
+            <p>Guidance and assistance with tax-related administration and compliance processes, based on the client's circumstances.</p>
+          </article>
+          <article class="card">
+            <span class="card-tag">03</span>
+            <svg class="card-icon" viewBox="0 0 48 48"><circle cx="18" cy="16" r="6"/><circle cx="34" cy="18" r="4.5"/><path d="M6 38c0-7 5-12 12-12s12 5 12 12M28 30c1.5-3 4-4.5 6-4.5 4.5 0 8 3.5 8 9"/></svg>
+            <h3>Labour-Related Matters</h3>
+            <p>Practical support with applicable employment and labour administration requirements.</p>
+          </article>
+          <article class="card">
+            <span class="card-tag">04</span>
+            <svg class="card-icon" viewBox="0 0 48 48"><path d="M6 18l18-10 18 10M10 18v18M18 18v18M30 18v18M38 18v18M6 40h36"/></svg>
+            <h3>Central Supplier Database (CSD)</h3>
+            <p>Assistance with supplier profile registration, updates and related CSD administration.</p>
+          </article>
+          <article class="card">
+            <span class="card-tag">05</span>
+            <svg class="card-icon" viewBox="0 0 48 48"><circle cx="21" cy="21" r="13"/><path d="M31 31l11 11M16 21h10M21 16v10"/></svg>
+            <h3>Additional Business Compliance</h3>
+            <p>Help identifying relevant administrative requirements and the next steps for a business's particular needs.</p>
+          </article>
+          <article class="card">
+            <span class="card-tag">06</span>
+            <svg class="card-icon" viewBox="0 0 48 48"><path d="M8 40V22M18 40V14M28 40V24M38 40V8M4 40h40"/></svg>
+            <h3>Business Readiness</h3>
+            <p>Support to help business owners organise key business information and work through relevant compliance tasks.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Websites & Digital Tools -->
+    <section id="digital" class="digital" aria-label="Websites and digital tools projects">
+      <!-- Projects: live client websites (screenshots in assets/projects/) -->
+      <div class="panels reveal">
+        <div class="panel-track" id="panelTrack">
+          <article class="panel">
+            <img src="assets/projects/smart-gut-developers.png" alt="Colourful healthy food bowl representing gut health" loading="lazy" width="900" height="1400">
+            <h3 class="panel-title"><span class="n">01</span>Smart Gut<br>Developers</h3>
+            <span class="panel-type">Health &amp; wellness</span>
+            <div class="panel-info">
+              <p>A website for a team of certified dietitians focused on gut health, introducing their purpose, mission and services and making it easy to book.</p>
+              <a href="https://smartgutdevelopers.co.za/" class="panel-link" target="_blank" rel="noopener">Visit smartgutdevelopers.co.za <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
-            
-            <div>
-              <label for="email" class="block text-sm font-medium text-primaryDark">Email Address</label>
-              <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary">
+          </article>
+          <article class="panel">
+            <img src="assets/projects/lucmo-wines.jpg" alt="Guests enjoying Luc Mo wines at a Luc Mo event" loading="lazy" width="900" height="1400">
+            <h3 class="panel-title"><span class="n">02</span>Luc Mo<br>Wines</h3>
+            <span class="panel-type">Wine &amp; e-commerce</span>
+            <div class="panel-info">
+              <p>An online home and shop for a proudly African wine brand, with a wine portfolio, cart and checkout, and a sign-up for its community.</p>
+              <a href="https://lucmowines.com/" class="panel-link" target="_blank" rel="noopener">Visit lucmowines.com <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
-            
-            <div>
-              <label for="phone" class="block text-sm font-medium text-primaryDark">Phone Number</label>
-              <input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary">
+          </article>
+          <article class="panel">
+            <img src="assets/projects/ark-vision-energy.jpg" alt="LP gas cylinders lined up at Ark Vision Energy Depot" loading="lazy" width="900" height="1400">
+            <h3 class="panel-title"><span class="n">03</span>Ark Vision<br>Energy Depot</h3>
+            <span class="panel-type">Energy supply</span>
+            <div class="panel-info">
+              <p>A website for a supplier of Diesel 50 PPM and bulk LP gas, showcasing on-demand delivery, refuelling services and their safety and compliance standards.</p>
+              <a href="https://arkvisionenergy.co.za/" class="panel-link" target="_blank" rel="noopener">Visit arkvisionenergy.co.za <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
-            
-            <div>
-              <label for="service" class="block text-sm font-medium text-primaryDark">Service Interested In</label>
-              <select id="service" name="service" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary">
-                <option>Branding</option>
-                <option>Web Design</option>
-                <option>Compliance</option>
-                <option>Multiple Services</option>
-                <option>Not Sure Yet</option>
-              </select>
+          </article>
+          <article class="panel">
+            <img src="assets/projects/star-of-hope.jpg" alt="Staff meeting at Star of Hope Independent School" loading="lazy" width="900" height="1400">
+            <h3 class="panel-title"><span class="n">04</span>Star of Hope<br>Independent School</h3>
+            <span class="panel-type">Education</span>
+            <div class="panel-info">
+              <p>A website for an independent school, sharing its mission and vision, upcoming events and learners' achievements with parents and the community.</p>
+              <a href="https://starofhopeindependent.co.za/" class="panel-link" target="_blank" rel="noopener">Visit starofhopeindependent.co.za <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
-            
-            <div>
-              <label for="message" class="block text-sm font-medium text-primaryDark">Your Message</label>
-              <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary"></textarea>
+          </article>
+          <article class="panel">
+            <img src="assets/projects/snappy-investments.jpg" alt="Road construction workers laying asphalt" loading="lazy" width="900" height="1400">
+            <h3 class="panel-title"><span class="n">05</span>Snappy<br>Investments</h3>
+            <span class="panel-type">Construction &amp; mining</span>
+            <div class="panel-info">
+              <p>A website for a construction, mining and waste-management company, presenting its engineering, electrical, cleaning and water-infrastructure services.</p>
+              <a href="https://snappyinvestments.co.za/" class="panel-link" target="_blank" rel="noopener">Visit snappyinvestments.co.za <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
-            
-            <div>
-              <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primaryDark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150">
-                Send Message
-                <i class="fas fa-paper-plane ml-2"></i>
-              </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <div>
+            <h2>Let's make <b>business easier.</b></h2>
+            <p>Whether you need help navigating a compliance process or want a website or digital tool for your business, Inkwazi Digital is ready to discuss how we can assist.</p>
+          </div>
+          <a href="#contact" class="btn">Get in touch
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder: full-width photo with overlay.
+         OWNER PHOTO: replace assets/banner-office-team.jpg in the .founder rule (styles.css) with the owner's photo,
+         ideally a landscape shot with the owner on the right-hand side. -->
+<section class="founder" aria-label="Our approach">
+  <div class="container">
+    <div class="founder-copy reveal">
+      <span class="section-label">A better way to do business</span>
+
+      <h2 class="section-title">
+        Your business deserves
+        more than a <b>checklist.</b>
+      </h2>
+
+      <p>
+        The right support helps you stay organised, present your
+        business professionally and move forward with confidence.
+        Inkwazi Digital brings business compliance and digital
+        solutions together under one roof.
+      </p>
+
+      <a href="#services" class="more-link">
+        Explore our services
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- 04 Contact -->
+    <section id="contact" data-rail="get in touch">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="reveal">
+            <span class="section-label"><span class="num">04</span>Contact</span>
+            <h2 class="section-title">Speak to us about <b>your business.</b></h2>
+            <p class="muted">Talk to us about your compliance needs, website project or digital tool idea. We welcome enquiries from business owners and organisations looking for practical support.</p>
+
+            <ul class="contact-details">
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <div>
+                  <span>Address</span>
+                  <a href="https://www.google.com/maps/search/?api=1&query=504+Magalela+Drive+Tweefontein+A+KwaMhlanga+1022" target="_blank" rel="noopener">504 Magalela Drive, Tweefontein A,<br>Phumula, KwaMhlanga, 1022, South Africa</a>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+                <div>
+                  <span>Call or WhatsApp</span>
+                  <a href="tel:+27665955511">066 595 5511</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Enquiry form: on submit it opens WhatsApp with the message filled in (no server needed) -->
+          <form class="contact-form reveal" id="waForm" novalidate>
+            <div class="form-title"><b>Send us a message</b><small>Fields marked <span style="color:var(--red)">*</span> are required</small></div>
+            <div class="form-row">
+              <label>
+                <span>Your name <i>*</i></span>
+                <input type="text" name="name" autocomplete="name" required placeholder="e.g. Thandi Mahlangu">
+              </label>
+              <label>
+                <span>Business name</span>
+                <input type="text" name="business" autocomplete="organization" placeholder="Optional">
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                <span>Phone number</span>
+                <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="Optional">
+              </label>
+              <label>
+                <span>I need help with <i>*</i></span>
+                <select name="service" required>
+                  <option value="" disabled selected hidden>Choose a service</option>
+                  <option>CIPC support</option>
+                  <option>SARS support</option>
+                  <option>Labour-related matters</option>
+                  <option>Central Supplier Database (CSD)</option>
+                  <option>Business readiness</option>
+                  <option>Website design &amp; development</option>
+                  <option>Custom digital tool</option>
+                  <option>Something else</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              <span>Message <i>*</i></span>
+              <textarea name="message" rows="5" required placeholder="Tell us a little about what you need"></textarea>
+            </label>
+            <p class="form-error" id="waError" role="alert" hidden>Please fill in your name, the service and a short message.</p>
+            <div class="form-foot">
+              <button type="submit" class="wa-submit"><span class="lbl"><svg class="wa" viewBox="0 0 24 24"><path d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 4.9 5-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.9c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.7-.3z"/></svg>Send on WhatsApp</span><svg class="arr" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <small>Your message opens in WhatsApp, ready to send to <b>066 595 5511</b>. Nothing is sent until you press send there.</small>
             </div>
           </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-<footer class="pt-16 pb-8 bg-gray-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <!-- Brand & Social -->
-            <div>
-                <img src="images/logo_inkwazi.webp" alt="Inkwazi Digital Logo" class="h-16 w-auto mb-6">
-                <p class="text-primaryLight mb-6">
-                    Architecting digital success through strategic marketing solutions designed for sustainable growth.
-                </p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="text-primaryLight hover:text-accent transition"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <!-- Company Links -->
-            <div>
-                <h4 class="text-white font-bold text-lg mb-6">Company</h4>
-                <ul class="space-y-3">
-                    <li><a href="#about" class="text-primaryLight hover:text-accent transition">About Us</a></li>
-                    <li><a href="#process" class="text-primaryLight hover:text-accent transition">Our Process</a></li>
-                    <li><a href="#portfolio" class="text-primaryLight hover:text-accent transition">Case Studies</a></li>
-                    <li><a href="#services" class="text-primaryLight hover:text-accent transition">Services</a></li>
-                    <li><a href="#contact" class="text-primaryLight hover:text-accent transition">Contact Us</a></li>
-                </ul>
-            </div>
-            <!-- Contact Info -->
-            <div>
-                <h4 class="text-white font-bold text-lg mb-6">Contact Info</h4>
-                <ul class="space-y-3 text-primaryLight">
-                    <li class="flex items-start">
-                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-sm"></i>
-                        <span>123 Business Ave, Johannesburg, South Africa</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-phone-alt mt-1 mr-3 text-sm"></i>
-                        <span>+27 12 345 6789</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-envelope mt-1 mr-3 text-sm"></i>
-                        <span>info@inkwazidigital.co.za</span>
-                    </li>
-                </ul>
-            </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#top" class="footer-logo"><img src="assets/logo-white.png" alt="Inkwazi Digital" width="50" height="40"></a>
+          <p class="footer-tagline"><b>Compliance</b> made clearer. <b>Business</b> made easier.</p>
+          <p>Business Compliance Consultancy &amp; Digital Solutions</p>
         </div>
-        <div class="border-t border-white pt-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-primaryLight text-sm mb-4 md:mb-0">
-                    &copy; 2023 Inkwazi Digital. All rights reserved.
-                </p>
-                <!-- <div class="flex space-x-6">
-                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Privacy Policy</a>
-                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Terms of Service</a>
-                    <a href="#" class="text-primaryLight hover:text-accent text-sm transition">Sitemap</a>
-                </div> -->
-            </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">CIPC Support</a></li>
+            <li><a href="#services">SARS Support</a></li>
+            <li><a href="#services">Labour &amp; CSD</a></li>
+            <li><a href="#digital">Websites &amp; Digital Tools</a></li>
+          </ul>
         </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">Who We Are</a></li>
+            <li><a href="about.html#approach">Our Approach</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="disclaimer">This site provides a general overview of Inkwazi Digital's services. The exact scope, requirements, timelines and fees for any engagement will be confirmed with the client. Compliance outcomes depend on the client's circumstances, supporting documentation and the relevant authority's requirements.</p>
+      <p class="copyright">&copy; <span id="year"></span> Inkwazi Digital. All rights reserved.</p>
     </div>
-</footer>
+  </footer>
 
-  <script>
-    // Simple counter animation for stats
-    document.addEventListener('DOMContentLoaded', function() {
-      const counters = document.querySelectorAll('[data-count]');
-      const speed = 200;
-      
-      counters.forEach(counter => {
-        const target = +counter.getAttribute('data-count');
-        const count = +counter.innerText.replace('+', '');
-        const increment = target / speed;
-        
-        if (count < target) {
-          counter.innerText = '0';
-          
-          const updateCount = () => {
-            const current = +counter.innerText;
-            const incrementValue = Math.ceil(target / speed);
-            
-            if (current < target) {
-              counter.innerText = Math.ceil(current + incrementValue);
-              setTimeout(updateCount, 1);
-            } else {
-              counter.innerText = target;
-              if (counter.getAttribute('data-count').includes('+')) {
-                counter.innerText += '+';
-              }
-            }
-          };
-          
-          // Start counting when element is in viewport
-          const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-              updateCount();
-              observer.unobserve(counter);
-            }
-          });
-          
-          observer.observe(counter);
-        }
-      });
+  <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18V6M6 12l6-6 6 6"/></svg>
+  </a>
 
-      // FAQ accordion functionality
-      const faqButtons = document.querySelectorAll('.bg-white button');
-      faqButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const content = button.nextElementSibling;
-          const icon = button.querySelector('i');
-          
-          content.classList.toggle('hidden');
-          icon.classList.toggle('transform');
-          icon.classList.toggle('rotate-180');
-        });
-      });
-    });
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
