@@ -783,7 +783,7 @@ section[data-rail] { position: relative; }
   min-height: 88vh; display: flex; align-items: center;
   padding: clamp(80px, 12vw, 140px) 0;
   color: var(--white);
-  background: #1a1a1a url("../owner-image.jpg") 65% center / cover no-repeat;   /* OWNER PHOTO goes here */
+  background: #1a1a1a url("../owner-Image.jpg") 65% center / cover no-repeat;   /* OWNER PHOTO goes here */
 }
 .founder::before {   /* overlay: dark on the left for the text, clear on the right for the person */
   content: ""; position: absolute; inset: 0;
