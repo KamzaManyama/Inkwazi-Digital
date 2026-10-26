@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found | Inkwazi Digital</title>
+  <meta name="description" content="The page you are looking for could not be found.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>
+    /* 404 page only */
+    .notfound { min-height: calc(100vh - 88px); margin-top: 88px; display: flex; align-items: center; position: relative; overflow: hidden; }
+    .notfound::after {   /* same ring pattern as the red CTA band, in light grey */
+      content: ""; position: absolute; z-index: 0; pointer-events: none;
+      right: -220px; top: 50%; width: 760px; height: 760px; transform: translateY(-50%);
+      border-radius: 50%;
+      background: repeating-radial-gradient(circle at center, rgba(17,17,17,.07) 0 1.5px, transparent 1.5px 34px);
+      -webkit-mask-image: radial-gradient(circle at center, #000 18%, transparent 68%);
+              mask-image: radial-gradient(circle at center, #000 18%, transparent 68%);
+    }
+    .notfound .container { position: relative; z-index: 1; width: 100%; }
+    .nf-code { font-family: var(--display); font-weight: 600; font-size: clamp(96px, 18vw, 200px); line-height: .9; letter-spacing: -0.05em; margin: 0 0 18px; color: var(--ink); }
+    .nf-code span { color: var(--red); }
+    .notfound h1 { font-weight: 300; font-size: clamp(28px, 3.4vw, 46px); margin-bottom: 18px; }
+    .notfound h1 b { font-weight: 600; }
+    .notfound .muted { color: var(--slate); max-width: 520px; }
+    .nf-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .nf-actions .more-link { margin-top: 0; }
+    .nf-actions .more-link.alt { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+    .nf-actions .more-link.alt:hover { background: var(--ink); color: var(--white); }
+    .nf-links { list-style: none; padding: 0; margin: 40px 0 0; display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 14px; }
+    .nf-links a { color: var(--slate); border-bottom: 1px solid var(--line); }
+    .nf-links a:hover { color: var(--red-dark); border-color: var(--red); }
+    @media (max-width: 600px) {
+      .notfound { margin-top: 72px; min-height: calc(100vh - 72px); }
+      .nf-actions .more-link { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="/" class="logo" aria-label="Inkwazi Digital home">
+        <img src="/assets/black_logo-trans-300x241.png.bv_resized_mobile.png.bv.webp" alt="Inkwazi Digital logo" width="65" height="52">
+      </a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="/about.html">About</a>
+        <a href="/#services">Services</a>
+        <a href="/#digital">Projects</a>
+        <a href="/#contact" class="btn-nav">Contact us</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="notfound" aria-labelledby="nf-title">
+      <div class="container">
+        <span class="section-label"><span class="num">404</span>Page not found</span>
+        <p class="nf-code" aria-hidden="true">4<span>0</span>4</p>
+        <h1 id="nf-title">This page has <b>moved or doesn't exist.</b></h1>
+        <p class="muted">Our website has been updated, so some old links no longer work. Try one of the pages below, or get in touch and we'll help you find what you need.</p>
+        <div class="nf-actions">
+          <a href="/" class="more-link">Back to home <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="https://wa.me/27665955511" class="more-link alt" target="_blank" rel="noopener">WhatsApp 066 595 5511 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <ul class="nf-links">
+          <li><a href="/about.html">About us</a></li>
+          <li><a href="/#services">Our services</a></li>
+          <li><a href="/#digital">Projects</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="mailto:info@inkwazidigital.co.za">info@inkwazidigital.co.za</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="/" class="footer-logo"><img src="/assets/logo-white.png" alt="Inkwazi Digital" width="50" height="40"></a>
+          <p class="footer-tagline"><b>Compliance</b> made clearer. <b>Business</b> made easier.</p>
+          <p>Business Compliance Consultancy &amp; Digital Solutions</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/#services">CIPC Support</a></li>
+            <li><a href="/#services">SARS Support</a></li>
+            <li><a href="/#services">Labour &amp; CSD</a></li>
+            <li><a href="/#digital">Websites &amp; Digital Tools</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about.html">Who We Are</a></li>
+            <li><a href="/about.html#approach">Our Approach</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Tweefontein A, Phumula, KwaMhlanga</li>
+            <li><a href="tel:+27665955511">066 595 5511</a></li>
+            <li><a href="mailto:info@inkwazidigital.co.za">info@inkwazidigital.co.za</a></li>
+            <li><a href="https://wa.me/27665955511" target="_blank" rel="noopener">WhatsApp us</a></li>
+            <li><a href="https://facebook.com/inkwazidigital" target="_blank" rel="noopener">Facebook</a> &middot; <a href="https://x.com/inkwazidigital" target="_blank" rel="noopener">X</a> &middot; <a href="https://instagram.com/inkwazidigital" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; <span id="year"></span> Inkwazi Digital. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
