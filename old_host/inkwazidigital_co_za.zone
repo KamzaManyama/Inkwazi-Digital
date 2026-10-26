@@ -1,0 +1,37 @@
+; Zone file exported from Afrihost ClientZone @ 20261026_151011
+$TTL 14401
+$ORIGIN inkwazidigital.co.za.
+;
+@                           IN    SOA      ns.dns1.co.za. support.afrihost.com. (
+                                           2025061801
+                                           28800
+                                           3600
+                                           2419200
+                                           1800
+                                           )
+
+@                     86400 IN    NS       ns.dns1.co.za.
+@                     86400 IN    NS       ns.dns2.co.za.
+@                     86400 IN    NS       ns.otherdns.net.
+@                     86400 IN    NS       ns.otherdns.com.
+;
+@                     14401 IN    TXT      "v=spf1 +a +mx include:spf.aserv.co.za ~all"
+@                     14401 IN    TXT      "mailconf=https://envoy.aserv.co.za/mail/config-v1.1.xml"
+;
+_imaps._tcp           14401 IN    SRV      1 993 envoy.aserv.co.za
+_autodiscover._tcp    14401 IN    SRV      0 443 envoy.aserv.co.za
+_submission._tcp      14401 IN    SRV      1 25 envoy.aserv.co.za
+;
+autoconfig            14401 IN    CNAME    envoy.aserv.co.za.
+autodiscover          14401 IN    CNAME    envoy.aserv.co.za.
+;
+www                   14401 IN    A        154.0.170.76
+ftp                   14401 IN    A        154.0.170.76
+cpanel                14401 IN    A        154.0.170.76
+webmail               14401 IN    A        154.0.170.76
+*                     14401 IN    A        154.0.170.76
+@                     14401 IN    A        154.0.170.76
+mail                  14401 IN    A        154.0.170.76
+;
+@                     14401 IN    MX       10 mail.inkwazidigital.co.za.
+;
