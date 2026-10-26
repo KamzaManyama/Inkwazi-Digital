@@ -30,6 +30,7 @@
     .notfound h1 { font-weight: 300; font-size: clamp(28px, 3.4vw, 46px); margin-bottom: 18px; }
     .notfound h1 b { font-weight: 600; }
     .notfound .muted { color: var(--slate); max-width: 520px; }
+    .nf-redirect { margin-top: 14px; font-size: 14px; font-weight: 500; color: var(--red-dark); }
     .nf-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
     .nf-actions .more-link { margin-top: 0; }
     .nf-actions .more-link.alt { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
@@ -46,7 +47,7 @@
 <body>
 
   <!-- Header -->
-  <header class="header" id="header">
+  <!-- <header class="header" id="header">
     <div class="container">
       <a href="/" class="logo" aria-label="Inkwazi Digital home">
         <img src="/assets/black_logo-trans-300x241.png.bv_resized_mobile.png.bv.webp" alt="Inkwazi Digital logo" width="65" height="52">
@@ -61,7 +62,7 @@
         <span></span><span></span><span></span>
       </button>
     </div>
-  </header>
+  </header> -->
 
   <main id="top">
     <section class="notfound" aria-labelledby="nf-title">
@@ -70,23 +71,24 @@
         <p class="nf-code" aria-hidden="true">4<span>0</span>4</p>
         <h1 id="nf-title">This page has <b>moved or doesn't exist.</b></h1>
         <p class="muted">Our website has been updated, so some old links no longer work. Try one of the pages below, or get in touch and we'll help you find what you need.</p>
+        <p class="nf-redirect" id="nfRedirect" aria-live="polite" hidden></p>
         <div class="nf-actions">
           <a href="/" class="more-link">Back to home <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a href="https://wa.me/27665955511" class="more-link alt" target="_blank" rel="noopener">WhatsApp 066 595 5511 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <!-- <a href="https://wa.me/27665955511" class="more-link alt" target="_blank" rel="noopener">WhatsApp 066 595 5511 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a> -->
         </div>
-        <ul class="nf-links">
+        <!-- <ul class="nf-links">
           <li><a href="/about.html">About us</a></li>
           <li><a href="/#services">Our services</a></li>
           <li><a href="/#digital">Projects</a></li>
           <li><a href="/#contact">Contact</a></li>
           <li><a href="mailto:info@inkwazidigital.co.za">info@inkwazidigital.co.za</a></li>
-        </ul>
+        </ul> -->
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
+  <!-- <footer class="footer">
     <div class="container">
       <div class="footer-top">
         <div>
@@ -124,8 +126,38 @@
       </div>
       <p class="copyright">&copy; <span id="year"></span> Inkwazi Digital. All rights reserved.</p>
     </div>
-  </footer>
+  </footer> -->
 
   <script src="/assets/js/main.js"></script>
+  <script>
+    // Auto-redirect: send visitors from missing pages to the closest new page.
+    // Links that look like an old page go there straight away;
+    // anything else counts down and goes to the home page.
+    (function () {
+      var path = decodeURIComponent(location.pathname).toLowerCase()
+        .replace(/^\/index\.php/, '').replace(/\.html?$/, '').replace(/\/+$/, '');
+      if (path === '/404') return; // someone opened this page directly
+
+      var rules = [
+        [/about|welcome|who-we-are|founder|team/, '/about.html'],
+        [/contact|enquir|quote|get-in-touch/, '/#contact'],
+        [/service|business-admin|cipc|sars|csd|complian|labou?r|tax/, '/#services'],
+        [/portfolio|project|web-design|website|logo|design|digital/, '/#digital']
+      ];
+      for (var i = 0; i < rules.length; i++) {
+        if (rules[i][0].test(path)) { location.replace(rules[i][1]); return; }
+      }
+
+      var seconds = 5;
+      var note = document.getElementById('nfRedirect');
+      function tick() {
+        note.textContent = 'Taking you to the home page in ' + seconds + ' second' + (seconds === 1 ? '' : 's') + '…';
+        if (seconds-- <= 0) { location.replace('/'); return; }
+        setTimeout(tick, 1000);
+      }
+      note.hidden = false;
+      tick();
+    })();
+  </script>
 </body>
 </html>
